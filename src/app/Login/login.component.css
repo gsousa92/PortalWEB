@@ -1,0 +1,160 @@
+.container {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100%;
+}
+.contentor, .ladoEsquerdo, .ladoDireito {
+    height:100%;
+}
+.FundoLogin{
+    
+    /* background-image: url('../assets/Imagens/portal.jpg');  */
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position:center;
+  
+}
+
+.FundoBranco{
+    background-color: white;
+ 
+    background-size: auto;
+    float: left;
+    /* background-position: left; */
+    width: 35%;
+    
+}
+
+.footer{
+    position: fixed;
+    bottom:0px;
+    width: calc(100% - 30px);
+    font-size: 12px;
+    color: #A1A1A1;
+    text-align: center;
+    background-color: white;
+    z-index: 999;
+}
+.footer2{
+    position: fixed;
+    bottom: 0px;
+    width: calc(35% - (14%));
+    font-size: 12px;
+    text-align: center;
+    color: #A1A1A1;
+    z-index: 999;
+    left: 100px;
+}
+
+
+.FormStyle{
+    text-align: center;
+    margin:0 auto;
+    /* display:inline-block; */
+}
+.BotaoEntrar{
+    color:white;
+    background: #4AA8F5;
+    border: #4AA8F5;
+    width: 100%;   
+    border-radius: 50px;
+    height: 50px;
+    font-weight: 600;
+}
+
+.BotaoEntrar:active{
+    background:rgb(44,132,204);
+}
+
+.textBoxLogin{
+    height: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+  
+}
+
+.paddingLogin{
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+
+.paddingLoginImagem{
+    padding-top: 175px;
+    padding-bottom: 125px;
+}
+.paddingLoginBotao{
+    padding-top: 50px;
+}
+.paddingTextLogin{
+    padding-top: 30px;
+}
+.corTextPass{
+    color:#363636;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: underline;
+    
+}
+.corTextRegisto{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color:#4aa8f5;
+
+}
+
+/deep/ .ErrorText{
+    text-align:left !important; 
+    color:#ed356a;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/deep/ .popupURl .dx-toolbar-items-container{
+    display: none;
+}
+/deep/ .popupURl .dx-popup-title.dx-toolbar {
+   
+    display: none;
+}
+
+/* @media all and (max-width: 1024px) {
+    
+      .textBoxLogin{
+        width: 50%;
+        
+      }
+    
+     .BotaoEntrar{
+       width: 50%;
+     }
+
+   } */
+   .BotaoPopupEntrar{
+    color:white;
+    background: #4AA8F5;
+    border: #4AA8F5;
+    width: 50%;   
+    border-radius: 50px;
+    height: 50px;
+    font-weight: 600;
+    margin-top:10px; 
+}
+.textBoxUrl{
+    margin-top:30px; 
+    width: 80%;
+        height: 50px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+       
+}
+.logoPortal {
+    margin-top: 20%;
+    margin-bottom: 15%;
+}
+.RegistoLink{
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+.LinkPassword{
+    margin-top: 15%;
+}

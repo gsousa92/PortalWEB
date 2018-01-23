@@ -1,0 +1,391 @@
+<header>
+  <div class="menuTeste">
+    <div class="row" style="margin-left:0px; margin-right:0px">
+      <div class="col-lg-1 col-3  menuTeste2">
+
+        <button id="botaoMenu" #botaoMenu style="background-color:transparent; border:0" class="toggle-button">
+          <img src="./assets/Imagens/hamburger.png" alt="">
+        </button>
+      </div>
+      <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor:pointer;">
+        <!-- <div [hidden]="registoProducao">
+                  <a (click)="RegistoProducao()">
+                      <img width="20" height="auto" src="./assets/Imagens/tregistodeproducao.svg" />
+                      <span>Registo Produção</span>
+                  </a>
+              </div> -->
+      </div>
+      <div class="col-2 d-block d-lg-none" style="cursor:pointer;" align="center">
+        <!-- <div [hidden]="registoProducao">
+                  <a (click)="RegistoProducao()">
+                      <img width="20" height="auto"  src="./assets/Imagens/tregistodeproducao.svg" />
+                  </a>
+              </div> -->
+      </div>
+
+      <!--<div class="col-md-3 col-12  menuTeste" id="alignText" [hidden]="registoProducaoApa" style="border-bottom:3px solid #4AA8F5 !important">
+              &nbsp;
+          </div>-->
+
+
+      <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor: pointer;">
+        <!-- <a (click)="Comentario()">
+                  <img width="20" height="auto"src="./assets/Imagens/comentarios.svg" />
+                  <span>Comentários</span>
+              </a> -->
+      </div>
+      <div class="col-2 d-block d-lg-none" id="alignText" style="cursor: pointer;" align="center">
+        <!-- <a (click)="Comentario()">
+                  <img width="20" height="auto" src="./assets/Imagens/comentarios.svg" />
+              </a> -->
+      </div>
+
+
+      <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor:pointer;">
+        <!-- <div [hidden]="linkAnexos">
+                  <a (click)="Anexos()">
+                      <img width="20" height="auto" src="./assets/Imagens/anexos.svg" />
+                      <span>Anexos</span>
+                  </a> -->
+        <!-- </div> -->
+      </div>
+      <div class="col-2 d-block d-lg-none" id="alignText" style="cursor:pointer;" align="center">
+        <!-- <div [hidden]="linkAnexos">
+                  <a (click)="Anexos()">
+                      <img width="20" height="auto" src="./assets/Imagens/anexos.svg" />
+                  </a>
+              </div> -->
+      </div>
+      <!--<div class="col-md-3 col-12  menuTeste" id="alignText" [hidden]="!linkAnexos" style="border-bottom:3px solid #4AA8F5 !important">
+              &nbsp;
+          </div>-->
+
+      <div class="col-3 d-block d-lg-none">
+        <div class="dropdown">
+          <a class="btn dropdown-toggle " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="numberCircle" [ngStyle]="{'background-color': utilizador.cor }">{{utilizador.Utilizador[0]}}
+            </div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="dropdownMenuButton">
+            <li>
+              <a class="dropdown-item  UtilizadorHover" style="border-bottom:1px solid #4aa8f5">
+                {{utilizador.Utilizador}}
+              </a>
+            </li>
+            <li [hidden]="AcessoAdmin">
+              <a class="dropdown-item MenuUtilizador" (click)="RegistoPendentes()">
+                <img width="20" height="20" src="./assets/Imagens/registospendentes.svg" />
+                <span>Registo Utilizadores</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item MenuUtilizador " (click)="LogOut()">
+                <img width="20" height="20" src="./assets/Imagens/iconlogout.svg" />
+
+                <span>Log Out</span>
+              </a>
+            </li>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 d-none d-lg-block menuTeste2" id="alignText" style="float:right;cursor: pointer;">
+        <div class="d-inline-block">
+          <a class="btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{utilizador.Utilizador}} </a>
+          <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="dropdownMenuButton">
+
+            <li [hidden]="AcessoAdmin">
+              <a class="dropdown-item MenuUtilizador" (click)="RegistoPendentes()">
+                <img width="20" height="auto" src="./assets/Imagens/registospendentes.svg" />
+                <span>Registo Utilizadores</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item MenuUtilizador " (click)="LogOut()">
+                <img width="20" height="auto" src="./assets/Imagens/iconlogout.svg" />
+                <span>Log Out</span>
+              </a>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="NomeModulo">Entradas</div>
+</header>
+
+<div style="overflow-x: hidden; overflow-y:hidden">
+
+
+  <div class="frameCombo">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+        <dx-select-box class="ComboFornecedoresEntradas" [dataSource]="dsFornecedores" displayExpr="Nome" valueExpr="CodGrupo" (onSelectionChanged)="changeForn($event)"
+          [readOnly]="readOnlyComboForn" [(ngModel)]="fixedForn" placeholder="Fornecedor">
+        </dx-select-box>
+      </div>
+    </div>
+  </div>
+
+  <div id="gridEntradaPecas">
+    <dx-data-grid #gridEntradaPecas class="gridEntradaPecas" [dataSource]="dsEntradaPecas" [selectedRowKeys]="[]" (onRowClick)="rowClicked($event)"
+      [allowColumnResizing]="false" [showColumnLines]="false" [showRowLines]="true" [showBorders]="false" [rowAlternationEnabled]="false"
+      [columnAutoWidth]="true" (onToolbarPreparing)="addBtnHistoricoPendentes($event)">
+      <dxo-selection mode="single"></dxo-selection>
+      <dxo-search-panel [visible]="true" placeholder="pesquisar..." [width]="240"></dxo-search-panel>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+
+
+
+      <dxo-paging [pageSize]="11"></dxo-paging>
+
+      <dxi-column dataField="EncOps" caption="OP"></dxi-column>
+      <dxi-column dataField="Art" caption="Referência"> </dxi-column>
+      <dxi-column dataField="Descricao" caption="Descrição"></dxi-column>
+      <dxi-column dataField="Pc" caption="Pc"></dxi-column>
+      <dxi-column dataField="Cor" caption="Cor"></dxi-column>
+      <dxi-column dataField="Planeado" caption="Planeado"></dxi-column>
+      <dxi-column dataField="Enviado" caption="Enviado"></dxi-column>
+      <dxi-column dataField="Produzido" caption="Produzido"></dxi-column>
+      <dxi-column dataField="Recebido" caption="Recebido"></dxi-column>
+
+      <tbody *dxTemplate="let dataSource of 'dsEntradaPecas'">
+        <tr class="dx-row main-row">
+          <td>{{dataSource.data.EncOps.toString()}}</td>
+          <td>{{dataSource.data.Art}}</td>
+          <td>{{dataSource.data.Descricao}}</td>
+          <td>{{dataSource.data.Pc}}</td>
+          <td>{{dataSource.data.Cor}}</td>
+          <td>{{dataSource.data.Planeado}}</td>
+          <td>{{dataSource.data.Enviado}}</td>
+          <td>{{dataSource.data.Produzido}}</td>
+          <td>{{dataSource.data.Recebido}}</td>
+        </tr>
+      </tbody>
+
+    </dx-data-grid>
+  </div>
+
+  <div id="popupRegistoNovaEntrada">
+    <dx-popup class="popupRegistoNovaEntrada" #popupRegistoNovaEntrada [showTitle]="true" title="Registo de Entradas - {{atual.Of}} / {{atual.Ref}} / {{atual.Cor}}"
+      [dragEnabled]="false" [closeOnOutsideClick]="true" [visible]="popupVisible.RegistoNovaEntrada" (onHiding)="closePopup('RegistoNovaEntrada')"
+      (onShown)="popShown()" [showCloseButton]="true" style="width:60%;max-width:800px">
+
+      <div class="gridRegistoNovaEntrada" *dxTemplate="let data of 'content'">
+        <div class="contentPopupRegistoEntradas" style="height: 100%;
+          overflow-y: auto;
+          overflow-x: hidden;">
+          <dx-data-grid #gridRegistoEntradas (onEditorPreparing)="onEditorRegistoEntradas($event)" [dataSource]="dsRegistoEntradas"
+            (onInitialized)="onInitializedGridRegistoEntradas($event)" [showColumnLines]="false" [showRowLines]="true" [showBorders]="false"
+            [rowAlternationEnabled]="false" [(columns)]="arrayTam" [columnAutoWidth]="true">
+
+
+            <dxo-editing mode="batch" [allowUpdating]="true"></dxo-editing>
+          </dx-data-grid>
+
+          <form class="formRegistoEntrada" (submit)="novoRegistoEntrada(); false">
+            <div class="dx-fieldset">
+              <div class="row">
+                <div class="col-md-4 col-lg-4">
+                  <div class="dx-field">
+                    <div class="docEntrega">
+                      <dx-text-box placeholder="Doc. Entrega..." [(value)]="novoRegisto.vDoc">
+                        <dx-validator>
+                          <dxi-validation-rule type="required" message="Doc obrigatório"></dxi-validation-rule>
+                        </dx-validator>
+                      </dx-text-box>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                  <div class="dx-field">
+                    <div class="dataEntrega">
+                      <dx-date-box [(value)]="novoRegisto.dataRegistoEntrada" placeholder="Data de Entrega..." displayFormat="dd/MM/yyyy">
+                        <dx-validator>
+                          <dxi-validation-rule type="required" message="Data obrigatória"></dxi-validation-rule>
+                        </dx-validator>
+                      </dx-date-box>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                  <div class="dx-field">
+                    <div class="partida">
+                      <dx-text-box placeholder="Partida..." [(value)]="novoRegisto.partida">
+                      </dx-text-box>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="col-lg-12">
+                  <dx-button class="todosBotoes btnNovo" text="Novo" icon="./assets/Imagens/novo.svg" [useSubmitBehavior]="true"></dx-button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </dx-popup>
+  </div>
+
+
+  <div id="popupRegistoEntradas">
+    <dx-popup class="popupRegistoEntradas" #popupRegistoEntradas [showTitle]="true" title="Registo de Entradas - {{atual.Of}} / {{atual.Ref}} / {{atual.Cor}}"
+      [dragEnabled]="false" [closeOnOutsideClick]="true" [visible]="popupVisible.RegistoEntradas" (onHiding)="closePopup('RegistoEntradas')"
+      (onShown)="popShown()" [showCloseButton]="true" style="width:60%;max-width:800px">
+
+      <div class="gridRegistoEntradas" *dxTemplate="let data of 'content'">
+        <div class="contentPopupRegistoEntradas" style="height: 100%;
+          overflow-y: auto;
+          overflow-x: hidden;">
+          <dx-data-grid #gridRegistoEntradas (onEditorPreparing)="onEditorRegistoEntradas($event)" [dataSource]="dsRegistoEntradas"
+            (onInitialized)="onInitializedGridRegistoEntradas($event)" [showColumnLines]="false" [showRowLines]="true" [showBorders]="false"
+            [rowAlternationEnabled]="false" [(columns)]="arrayTam" [columnAutoWidth]="true">
+
+          </dx-data-grid>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </dx-popup>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+      <dx-button class="todosBotoes btnGridEntradas btnNovoRegisto" icon="./assets/Imagens/novo.svg" text="Nova Entrada" (onClick)="onClickNovoRegistoEntrada()"></dx-button>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+      <div class="btnConsultas">
+        <dx-button class="todosBotoes btnGridEntradas btnConsultarEntradas" icon="./assets/Imagens/consultarEnvios.svg" text="Consultar envios"
+          (onClick)="onClickConsultarEnvios()"></dx-button>
+        <dx-button class="todosBotoes btnGridEntradas btnConsultarEnvios" icon="./assets/Imagens/consutarEntradas.svg" text="Consultar entradas"
+          (onClick)="onClickConsultarEntradas()"></dx-button>
+      </div>
+    </div>
+  </div>
+
+  <dx-popup class="popupConsultaEnvios" #popupConsultaEnvios [showTitle]="true" [width]="800" [height]="500" title="Consulta de Envios - {{atual.Of}} / {{atual.Ref}} / {{atual.Cor}}"
+    [dragEnabled]="false" [closeOnOutsideClick]="true" [visible]="popupVisible.ConsultaEnvios" (onHiding)="closePopup('ConsultaEnvios')"
+    (onShown)="popShown()" [showCloseButton]="true">
+
+    <div #gridConsultaEnvios class="gridConsultaEnvios" *dxTemplate="let data of 'content'">
+      <dx-data-grid [dataSource]="dsConsultaEnvios" [showColumnLines]="false" [showRowLines]="true" [showBorders]="false" [rowAlternationEnabled]="false"
+        rowTemplate="dsConsultaEnvios">
+        <dxo-scrolling mode="virtual"></dxo-scrolling>
+
+
+        <dxi-column caption="Data"></dxi-column>
+        <dxi-column caption="TDoc"></dxi-column>
+        <dxi-column caption="NDoc"></dxi-column>
+        <dxi-column caption="Enviado"></dxi-column>
+        <dxi-column caption="Recebido"></dxi-column>
+        <dxi-column caption="Falta"></dxi-column>
+
+
+        <tbody *dxTemplate="let dataSource of 'dsConsultaEnvios'">
+          <tr class="dx-row main-row">
+            <td>{{dataSource.data.Data | date: "dd/MM/yyyy"}}</td>
+            <td>{{dataSource.data.TDoc}}</td>
+            <td>{{dataSource.data.NDoc}}</td>
+            <td>{{dataSource.data.Enviado}}</td>
+            <td>{{dataSource.data.Entrada}}</td>
+            <td>{{dataSource.data.Falta}}</td>
+          </tr>
+        </tbody>
+      </dx-data-grid>
+    </div>
+  </dx-popup>
+
+  <dx-popup class="popupConsultaEntradas" #popupConsultaEntradas [width]="800" [height]="500" [showTitle]="true" title="Consulta de Entradas - {{atual.Of}} / {{atual.Ref}} / {{atual.Cor}}"
+    [dragEnabled]="false" [closeOnOutsideClick]="true" [visible]="popupVisible.ConsultaEntradas" (onHiding)="closePopup('ConsultaEntradas')"
+    (onShown)="popShown()" [showCloseButton]="true">
+
+
+    <div class="gridConsultaEntradas" *dxTemplate="let data of 'content'">
+      <dx-data-grid [dataSource]="dsConsultaEntradas" [showColumnLines]="false" [showRowLines]="true" [showBorders]="false" [rowAlternationEnabled]="false"
+        rowTemplate="dsConsultaEntradas">
+        <dxo-scrolling mode="virtual"></dxo-scrolling>
+
+        <dxi-column caption="Data"></dxi-column>
+        <dxi-column caption="VDoc"></dxi-column>
+        <dxi-column caption="Partida"></dxi-column>
+        <dxi-column caption="Entrada"></dxi-column>
+
+
+        <tbody *dxTemplate="let dataSource of 'dsConsultaEntradas'">
+          <tr class="dx-row main-row">
+            <td>{{dataSource.data.Data | date: "dd/MM/yyyy"}}</td>
+            <td>{{dataSource.data.VDoc}}</td>
+            <td>{{dataSource.data.Partida}}</td>
+            <td>{{dataSource.data.Entrada}}</td>
+          </tr>
+        </tbody>
+      </dx-data-grid>
+    </div>
+  </dx-popup>
+
+  <dx-popup class="popupAvisoExcessoEntradas" #popupAvisoExcessoEntradas [width]="600" [height]="240" [showTitle]="true" title="Aviso"
+    [dragEnabled]="false" [closeOnOutsideClick]="false" [visible]="popupVisible.AvisoExcessoEntradas" (onHiding)="closePopup('AvisoExcessoEntradas')"
+    (onShown)="popShown()" (onInitialized)="onInitPopup($event)" [showCloseButton]="false">
+    <div *dxTemplate="let data of 'content'">
+      <div class="avisoContent" align="center">
+        <p class="avisoExcesso" align="center">
+          Os seguintes Tamanhos possuem valores de entrada maiores que os esperados:
+        </p>
+        <div class="arrayTamExcesso">
+          <ng-container *ngFor="let array of arrayTamExcesso" style="width:10%;">
+            <span style="display:inline-block; width: 25px;"></span>
+            <b class="tamanhoExcesso" align="center">{{array}}</b>
+          </ng-container>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="display:inline-block">
+            <dx-button class="todosBotoes btnConfirmar" text="Confirmar" (onClick)="postNovoRegistoEntrada(); "></dx-button>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="display:inline-block">
+            <dx-button class="todosBotoes btnVoltarAtras" text="Voltar atrás" (onClick)="closePopup('AvisoExcessoEntradas')"></dx-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dx-popup>
+
+  <dx-popup class="popupVerHistorico" [width]="600" [height]="320" [showTitle]="true" title="Ver Histórico" [dragEnabled]="false"
+    [closeOnOutsideClick]="false" [visible]="popupVisible.VerHistorico" (onHiding)="closePopup('VerHistorico')" (onShown)="popShown()"
+    (onInitialized)="onInitPopup($event)" [showCloseButton]="false">
+
+    <div *dxTemplate="let data of 'content'" style="margin-top:25px; margin-left:15px;">
+      <div class="row verHistoricoOf">
+        <div class="col-md-3">OF:</div>
+        <div class="col-md-4">
+          <dx-text-box [value]="verHistoricoParams.Of"></dx-text-box>
+        </div>
+      </div>
+      <br>
+      <div class="row verHistoricoNDoc">
+        <div class="col-md-3">NDoc:</div>
+        <div class="col-md-4">
+          <dx-text-box [value]="verHistoricoParams.NDoc"></dx-text-box>
+        </div>
+      </div>
+      <br>
+      <div class="row verHistoricoData">
+        <div class="col-md-1">Data:</div>
+        <div class="col-md-1">de</div>
+        <div class="col-md-4">
+          <dx-date-box [(value)]="verHistoricoParams.DataInicio" displayFormat="dd/MM/yyyy"></dx-date-box>
+        </div>
+        <div class="col-md-1">até</div>
+        <div class="col-md-4">
+          <dx-date-box [(value)]="verHistoricoParams.DataFim" displayFormat="dd/MM/yyyy"></dx-date-box>
+        </div>
+      </div>
+      <br>
+      <br>
+      <dx-button class="todosBotoes btnConfirmarHistorico" text="Confirmar" style="float:right;margin-right:30px" (onClick)="onCLickConfirmarVerHistorico()"></dx-button>
+    </div>
+  </dx-popup>
+</div>

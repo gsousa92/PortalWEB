@@ -1,0 +1,343 @@
+<header>
+    <div class="menuTeste">
+        <div class="row" style="margin-left:0px; margin-right:0px">
+            <div class="col-lg-1 col-3  menuTeste2">
+
+                <button id="botaoMenu" #botaoMenu style="background-color:transparent; border:0" class="toggle-button">
+                    <img src="./assets/Imagens/hamburger.png" alt="">
+                </button>
+            </div>
+            <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor:pointer;">
+                <div [hidden]="registoProducao">
+                    <a (click)="RegistoProducao()">
+                        <img width="20" height="auto" src="./assets/Imagens/tregistodeproducao.svg" />
+                        <span>Registo Produção</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-2 d-block d-lg-none" style="cursor:pointer;" align="center">
+                <div [hidden]="registoProducao">
+                    <a (click)="RegistoProducao()">
+                        <img width="20" height="auto"  src="./assets/Imagens/tregistodeproducao.svg" />
+                    </a>
+                </div>
+            </div>
+
+            <!--<div class="col-md-3 col-12  menuTeste" id="alignText" [hidden]="registoProducaoApa" style="border-bottom:3px solid #4AA8F5 !important">
+                &nbsp;
+            </div>-->
+
+
+            <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor: pointer;">
+                <a (click)="Comentario()">
+                    <img width="20" height="auto"src="./assets/Imagens/comentarios.svg" />
+                    <span>Comentários</span>
+                </a>
+            </div>
+            <div class="col-2 d-block d-lg-none" id="alignText" style="cursor: pointer;" align="center">
+                <a (click)="Comentario()">
+                    <img width="20" height="auto" src="./assets/Imagens/comentarios.svg" />
+                </a>
+            </div>
+
+
+            <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor:pointer;">
+                <div [hidden]="linkAnexos">
+                    <a (click)="Anexos()">
+                        <img width="20" height="auto" src="./assets/Imagens/anexos.svg" />
+                        <span>Anexos</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-2 d-block d-lg-none" id="alignText" style="cursor:pointer;" align="center">
+                <div [hidden]="linkAnexos">
+                    <a (click)="Anexos()">
+                        <img width="20" height="auto" src="./assets/Imagens/anexos.svg" />
+                    </a>
+                </div>
+            </div>
+            <!--<div class="col-md-3 col-12  menuTeste" id="alignText" [hidden]="!linkAnexos" style="border-bottom:3px solid #4AA8F5 !important">
+                &nbsp;
+            </div>-->
+
+            <div class="col-3 d-block d-lg-none">
+                <div class="dropdown">
+                    <a class="btn dropdown-toggle " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="numberCircle" [ngStyle]="{'background-color': utilizador.cor }">{{utilizador.Utilizador[0]}}
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="dropdownMenuButton">
+                        <li>
+                            <a class="dropdown-item  UtilizadorHover" style="border-bottom:1px solid #4aa8f5">
+                                {{utilizador.Utilizador}}
+                            </a>
+                        </li>
+                        <li [hidden]="AcessoAdmin">
+                            <a class="dropdown-item MenuUtilizador" (click)="RegistoPendentes()">
+                                <img width="" height="" src="./assets/Imagens/registospendentes.svg" />
+                                <span>Registo Utilizadores</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item MenuUtilizador " (click)="LogOut()">
+                                <img width="" height="" src="./assets/Imagens/iconlogout.svg" />
+
+                                <span>Log Out</span>
+                            </a>
+                        </li>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 d-none d-lg-block menuTeste2" id="alignText" style="float:right;cursor: pointer;">
+                <div class="d-inline-block">
+                    <a class="btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{utilizador.Utilizador}} </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="dropdownMenuButton">
+
+                        <li [hidden]="AcessoAdmin">
+                            <a class="dropdown-item MenuUtilizador" (click)="RegistoPendentes()">
+                                <img width="20" height="auto" src="./assets/Imagens/registospendentes.svg" />
+                                <span>Registo Utilizadores</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item MenuUtilizador " (click)="LogOut()">
+                                <img width="20" height="auto" src="./assets/Imagens/iconlogout.svg" />
+                                <span>Log Out</span>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="LinhaCinza" align="center" style="">
+    <div class="row">
+        <div class="col-xl-4 col-lg-6 col-12">
+            <!-- <label class="TituloFornecedore float-left" style="margin-bottom:2px;margin-right:20px;width:85px;text-align:left">Fornecedor:</label> -->
+            <dx-select-box class="ComboFornecedores float-left" placeholder="Fornecedor" style="margin-left:30px;" width="240" [readOnly]="fornReadOnly" [dataSource]="dsFornecedores" displayExpr="Nome"
+                valueExpr="Codigo" [(ngModel)]="atualFornecedor" (onSelectionChanged)="changeForn($event)">
+            </dx-select-box>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-12">
+            <!-- <label class="TituloFornecedore float-left" style="margin-bottom:2px;margin-right:20px;width:85px;text-align:left">Consul.OF:</label> -->
+            <dx-select-box class="float-left" style="margin-left:30px;" placeholder="Consultar OF"   width="240" [dataSource]="DsSituacaoOrdem" displayExpr="Text" valueExpr="ValueSitacao"
+                [(ngModel)]="ValueSitacao" (onSelectionChanged)="changeForn($event)">
+            </dx-select-box>
+        </div>
+    </div>
+
+    <!-- <div class="row" style="margin-left:0px; margin-right:0px">
+        <div class="col-lg-1 d-none d-lg-block"> </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="row">
+                <div class="col-lg-4 col-6" style="padding-right:0px;" align="right">
+                    <label class="TituloFornecedore">Fornecedor:</label>
+                </div>
+                <div class="col-lg-8 col-6">
+                    <dx-select-box class="ComboFornecedores" [readOnly]="fornReadOnly" [dataSource]="dsFornecedores" displayExpr="Nome" valueExpr="CodigoGrupo"
+                        [(ngModel)]="atualFornecedor" (onSelectionChanged)="changeForn($event)">
+                    </dx-select-box>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="row">
+                <div class="col-lg-4 col-6" style="padding-right:0px;" align="right">
+                    <label class="TituloFornecedore">Consul.OF:</label>
+                </div>
+                <div class="col-lg-8 col-6">
+                    <dx-select-box class="SituacaoOrdem" [dataSource]="DsSituacaoOrdem" displayExpr="Text" valueExpr="ValueSitacao" [(ngModel)]="ValueSitacao"
+                        (onSelectionChanged)="changeForn($event)">
+                    </dx-select-box>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 d-none d-lg-block"> </div>
+        <div class="col-lg-3 d-none d-lg-block"></div>
+    </div> -->
+</div>
+
+<div id="grid">
+    <dx-data-grid #grid [dataSource]="dataSource" (onRowClick)="showInfo($event)" [showColumnLines]="false" [showRowLines]="true"
+        [columnAutoWidth]="true" rowTemplate="formatarData">
+        <!-- rowTemplate="formatarData"  -->
+        <dxo-filter-row [visible]="true"></dxo-filter-row>
+
+
+        <dxo-search-panel [visible]="true" [width]="240" placeholder="Procurar..."></dxo-search-panel>
+        <dxo-selection mode="single"></dxo-selection>
+        <dxo-paging [pageSize]="12"></dxo-paging>
+
+
+        <dxi-column caption="OP" dataField="tam14"></dxi-column>
+        <dxi-column caption="Ref." dataField="Artigo"></dxi-column>
+        <dxi-column caption="Descrição" dataField="DesArtigo"></dxi-column>
+        <!-- <dxi-column   caption="Quant" dataField="Quant"></dxi-column> -->
+        <dxi-column caption="Início Plan." dataType="date" dataField="DataInicio"></dxi-column>
+        <dxi-column caption="Fim Plan." dataType="date" dataField="DataFim"></dxi-column>
+        <dxi-column caption="Tipo" dataField="Nome1"></dxi-column>
+
+        <dxi-column caption="Cor" dataField="Cor"></dxi-column>
+        <dxi-column caption="Planeado" dataField="Quant" dataType="string"></dxi-column>
+        <dxi-column caption="Enviado" dataField="entregue" dataType="string"></dxi-column>
+        <dxi-column caption="Produzido" dataField="EmProducao"></dxi-column>
+
+        <!-- <dxi-column   caption="Situação" dataField="Posicao"></dxi-column> -->
+        <dxi-column caption="Anexos" dataField="Anexos"></dxi-column>
+        <dxi-column caption="Comentário" dataField="EstadoComentario"></dxi-column>
+        <dxi-column caption="Obeservações" dataField="Comentarios"></dxi-column>
+
+        <!-- <dxi-column   caption="Ent" dataField="Ent"></dxi-column> -->
+
+        <tbody *dxTemplate="let dataSource of 'formatarData'">
+            <tr class="dx-row main-row">
+                <td>{{dataSource.data.tam14}}</td>
+                <td>{{dataSource.data.Artigo}}</td>
+                <td>{{dataSource.data.DesArtigo}}</td>
+                <td>{{dataSource.data.DataInicio | date: "dd/MM/yyyy"}}</td>
+                <td>{{dataSource.data.DataFim | date: "dd/MM/yyyy"}}</td>
+                <td>{{dataSource.data.Nome1}}</td>
+                <td>{{dataSource.data.Cor}}</td>
+                <td>{{dataSource.data.Quant}}</td>
+                <td>{{dataSource.data.entregue}}</td>
+                <td>{{dataSource.data.EmProducao}}</td>
+                <td>{{dataSource.data.Anexos}}</td>
+                <td>{{dataSource.data.EstadoComentario}}</td>
+                <td>{{dataSource.data.Comentarios}}</td>
+
+            </tr>
+        </tbody>
+    </dx-data-grid>
+</div>
+<dx-popup #popupAnexos [showTitle]="true" title="Anexos" [dragEnabled]="false" (onHidden)="popHidden()" (onShown)="popShown()"  [closeOnOutsideClick]="true" style="width:100%;max-width:800px" showCloseButton="true"
+    [(visible)]="popupVisibleAnexos">
+    <div *dxTemplate="let da of 'content' ">
+
+        <div style="height: 100%;">
+            <dx-data-grid [dataSource]="dataSourceAnexo"  [showColumnLines]="false" [showRowLines]="true" [showBorders]="false" [rowAlternationEnabled]="false"
+                class="" [columnAutoWidth]="true">
+
+                <dxi-column cellTemplate="cellTemplate"></dxi-column>
+                <dxi-column caption="Descrição" dataField="Descricao"></dxi-column>
+                <dxi-column caption="Comentário" dataField="comentario"></dxi-column>
+                <dxi-column caption="Extenção" dataField="extencao"></dxi-column>
+
+                <div *dxTemplate="let data of 'cellTemplate'">
+                    <dx-button icon="./assets/Imagens/download_16.png" class="todosBotoes BotoesAnexos" text="Download" (onClick)="DownloadAnexo(data)"></dx-button>
+                </div>
+            </dx-data-grid>
+        </div>
+    </div>
+
+
+</dx-popup>
+<div id="PopupDetalhes">
+    <dx-popup #popupDetalhes [showTitle]="true" title="Mais Detalhes" (onHidden)="popHidden()" (onShown)="popShown()" [dragEnabled]="false" [closeOnOutsideClick]="false" [(visible)]="popupVisible" showCloseButton="true"
+        style="width:60%;max-width:800px">
+        <!-- <div *dxTemplate="let data of 'title'">
+            <span>Mais Detalhes</span>
+            <dx-button  style="float:right;blackground:black;" [text]="X"><span></span></dx-button>
+        </div> -->
+        <div *dxTemplate="let data of 'content'">
+            <div class="contentPopupDetalhes" style="height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;">
+                <div class="form formTopo">
+                    <div class="row">
+                        <div class="col-md-4 paddingRow">
+                            <div class="col-md-12" style="padding-top:15px;padding-bottom: 15px;">
+                                <label class="labelFornecedor">Ordem Fabrico:</label>
+
+                                <dx-text-box class="txtbox" [readOnly]="true" [value]="selectedRow.tam14"></dx-text-box>
+                            </div>
+                            <div class="col-md-12 ">
+                                <label class="labelFornecedor">Preço Total:</label>
+                                <dx-text-box [readOnly]="true" class="txtbox" [value]=""></dx-text-box>
+                            </div>
+                        </div>
+                        <div class="col-md-4 paddingRow">
+                            <div class="col-md-12" style="padding-top:15px;padding-bottom: 15px;">
+                                <label class="labelFornecedor">Data Encomenda:</label>
+                                <dx-date-box class="txtbox " width="100%" [readOnly]="true" [value]="selectedRow.DataInicio"></dx-date-box>
+                            </div>
+                            <div class="col-md-12 ">
+                                <label class="labelFornecedor">Modelo:</label>
+                                <dx-text-box class="txtbox " [readOnly]="true" [value]="selectedRow.Artigo"></dx-text-box>
+                                <dx-text-box class="txtbox tetboxDescricao" [readOnly]="true" [value]="selectedRow.DesArtigo"></dx-text-box>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <!-- <img src="./assets/Imagens/imagem_não_disponivel.png" alt="" style="height: 170px; float:right; margin-top:10px"> -->
+                            <img [src]="imagem" alt="" style="height: 170px; float:right; margin-top:10px">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <label class="labelFornecedor">Observações:</label>
+                            <dx-text-area class="txtbox" [height]="90" [readOnly]="true" [(value)]="selectedRow.Comentarios">
+                            </dx-text-area>
+                        </div>
+                    </div>
+                </div>
+
+                <dx-tab-panel class="tabelafornecedores" #tabPanel [height]="auto" [width]="auto" [(dataSource)]="dataSourcez">
+                    <div *dxTemplate="let company of 'title'">
+                        <span>{{company.title}}</span>
+                    </div>
+                    <div *dxTemplate="let content of 'item'">
+
+                        <div *ngIf="tabPanel.selectedIndex == 0;then content else other_content"></div>
+
+                        <ng-template #content>
+                            <dx-data-grid [dataSource]="dataSourceTamanho" [columnAutoWidth]="true" [showColumnLines]="false" [showRowLines]="true" [showBorders]="false"
+                                [rowAlternationEnabled]="false">
+                            </dx-data-grid>
+                        </ng-template>
+                        <ng-template #other_content>
+                            <dx-data-grid [dataSource]="dataSourcePontosControl" [columnAutoWidth]="true" [showColumnLines]="false" [showRowLines]="true"
+                                [showBorders]="false" [rowAlternationEnabled]="false">
+                            </dx-data-grid>
+                        </ng-template>
+                    </div>
+
+                </dx-tab-panel>
+
+            </div>
+        </div>
+
+    </dx-popup>
+</div>
+
+
+<dx-popup class="popupErro" [width]="330" [height]="360" [dragEnabled]="false" (onHidden)="popHidden()" (onShown)="popShown()" [closeOnOutsideClick]="false" [(visible)]="popupError">
+    <div *dxTemplate="let data of 'content'">
+        <div class="FundoVermelho">
+            <div align="center" class="ImgErro">
+                <img align="center" src="./assets/Imagens/iconerro.png" alt="">
+            </div>
+            <div align="center" class="InforErro">
+                <h1 class="TituloErro">Erro</h1>
+                <p class="paraErro">
+                    Lamentamos, mas não tem aceeso a esta ordem de fabrico.
+                </p>
+            </div>
+        </div>
+        <div class="fundoBranco" align="center">
+            <dx-button icon="./assets/Imagens/iconfechar.png" class="BotaoErro" text="Fechar" (onClick)="FecharErro()"></dx-button>
+        </div>
+    </div>
+
+</dx-popup>
+
+
+
+<!-- <main id="panel">
+    <router-outlet></router-outlet>
+</main> -->

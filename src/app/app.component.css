@@ -1,0 +1,55 @@
+#menu li {
+  display: block;
+  /* text-align: center;
+        color:white; */
+  border: 0px;
+}
+
+#menu .menuItem:active {
+  background-color: #363636;
+  /* color:#4AA8F5 !important; */
+}
+
+::ng-deep .dx-popup-title .dx-closebutton {
+  float: right;
+}
+
+#menu .menuItem .menuItemPadding {
+  padding: 40px 0;
+  border-top: 1px solid;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#menu a:focus,
+a:hover {
+  color: white;
+  text-decoration: none !important;
+}
+#menu a {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+#menu a:active {
+  color: #4aa8f5;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+::ng-deep .dx-popup-title.dx-toolbar .dx-toolbar-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #c9c9c9;
+  min-width: 350px;
+}
+
+@media screen and (max-width: 480px) {
+  ::ng-deep .dx-popup-title.dx-toolbar .dx-toolbar-label {
+
+    font-size: 12px;
+    height:45px;
+    text-align: justify;
+  }
+}

@@ -1,0 +1,105 @@
+
+.BotaoEntrar{
+    color:white;
+    background: #4AA8F5;
+    border: #4AA8F5;
+    width: 100%;   
+    border-radius: 50px;
+    height: 50px;
+    font-weight: 600;
+    margin-top:40px;
+}
+
+.BotaoEntrar:active{
+    background:rgb(44,132,204);
+}
+.corTextPass{
+    color:#908f8f;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 12px;
+    margin-bottom: 15px;
+    
+}
+
+.TituloCredenciais{
+    text-align: center;
+    color:#4AA8F5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size:28px;
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+.TituloCredenciais1{
+    text-align: left;
+    color:#363636;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size:18px;
+    padding-left:  3.5%;
+    /* margin-top: 100px; */
+    /* margin-bottom: 20px !important; */
+}
+
+.margimtop{
+    margin-top: 50px;
+}
+.container {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% ;
+}
+
+.contentor, .ladoEsquerdo, .ladoDireito {
+    height:100% ;
+}
+
+ .FundoImagem{
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position:center;
+    /* float: left; */
+}
+.ladoDireito{
+    padding-left:10%;
+    padding-right: 10%;
+    /* margin-left: 195px;
+    margin-right: 195px; */
+}
+.MargimBottom{
+    margin-bottom: 20px;
+}
+
+.MargimBottomTextBox{
+    margin-bottom: 15px;
+ 
+}
+
+.TamanhoCaixo{
+    height: 50px;
+    width: 100%;
+}
+
+.MargimTopCap{
+ margin-top: 15px;
+}
+
+.Pedidos{
+    text-align:center; 
+    color:#acacac;
+    font-size:16px;
+    margin-top:40px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ContainerCredenciais .container{
+    
+        width: 100%; 
+        padding-right: 15px;
+        padding-left:  0px;
+        margin-right: auto;
+        margin-left: auto;
+}

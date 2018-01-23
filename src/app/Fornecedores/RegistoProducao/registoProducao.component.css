@@ -1,0 +1,205 @@
+#grid{
+  box-shadow: 1px 1px 30px rgba(128, 128, 128, 0.38) !important;
+  border-radius: 15px;
+
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+/* .dx-toolbar {
+    
+    display: none !important;
+  } */
+  
+  /deep/ .gridQuantidade .dx-toolbar-items-container .dx-toolbar-item-content{
+    display: none;
+  }
+
+  .formTopo{
+    background-color: #f7f7f7;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+/* .row{
+  padding: 0px 100px 0px 100px
+} */
+
+.labelFornecedor {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  
+  font-weight: 700;
+  color: #636363;
+}
+.txtbox{
+  background: #f7f7f7;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500px;
+  font-size: 16px;
+  color:#919191;
+}
+
+/deep/ .txtbox   input {
+  background:#f7f7f7;
+}
+/deep/ .dx-datagrid-header-panel {
+  border-bottom: none;
+}
+.dropdownMenu 
+{
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 400;
+   font-size: 13px;
+   color:white !important;
+   background-color:rgba(54, 54, 54, 0.9);
+   border-radius: 0;
+   min-width: 200px;
+}
+.dropdown-menu>li>a{
+    color:white !important;
+}
+
+/deep/ .dropdownMenu .MenuUtilizador:hover
+{
+    
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 600;
+   font-size: 13px;
+   color:white !important;
+   background-color:#4AA8F5;
+   border-radius: 0;
+   
+  
+}
+
+.UtilizadorHover {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color:white !important;
+    background-color:rgba(54, 54, 54, 0);
+}
+.marginMenu{
+    margin: 7px;
+}
+
+ .botaoAtualizar.dx-button {
+  border-radius: 100px;
+  
+  border-width: 3px;
+  border-style: solid;
+  background-color: #fff;
+  border-color: #4aa8f5;
+  color: #333;
+}
+
+.botaoAtualizar.dx-button.dx-state-hover{
+  border-radius: 100px;
+
+  border-width: 3px;
+  border-style: solid;
+  background-color: #4aa8f5;;
+  border-color: #4aa8f5;
+
+}
+.botaoAtualizar.dx-button.dx-state-focused.dx-state-active{
+  border-radius: 100px;
+  
+  border-width: 3px;
+  border-style: solid;
+  background-color: #3E93D7;;
+  border-color: #3E93D7;
+
+}
+
+.LinhaCinza{
+  background-color: #f7f7f7;
+  margin-bottom: 30px;
+  height: 10%;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin-top: 30px;
+} 
+
+.LinhaAzul{
+  border-bottom:3px solid #4AA8F5 !important;
+}
+
+.TituloRegisto{
+  color:#4AA8F5; 
+  margin-left:30px;
+  line-height:36px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.numberCircle {
+  border-radius:100%;
+ 
+
+  /* width: 50px;
+  height:50px; */
+  padding: 5px 10px 5px 10px; 
+
+  background-color: #363636;
+  border: none;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  
+  font: 20px 'Montserrat', sans-serif;
+}
+
+
+.btn {
+  padding: 0px; 
+}
+
+.row{
+ margin-right: 0px;
+ margin-left: 0px;
+}
+
+@media screen and (max-width: 1200px) {
+  
+    #grid
+    {
+        box-shadow: none !important;
+      
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+        
+    }
+}
+@media screen and (max-width: 400px) {
+    
+       .MargemMobile{
+            margin-bottom: 5%;
+       }
+
+       #grid
+       {
+           box-shadow: none !important;
+           padding-bottom: 10px;
+           padding-left: 5px;
+           padding-right: 5px;
+           padding-top: 10px;
+           margin-right: 0px !important;
+           margin-left: 0px !important;
+           
+       }
+       /deep/.dx-datagrid {
+        line-height: 29px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 3px;
+        margin-right: 3px;
+      }
+}
+    

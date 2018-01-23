@@ -1,0 +1,154 @@
+<header>
+        <div class="menuTeste">
+                <div class="row" style="margin-left:0px; margin-right:0px">
+                        <div class="col-lg-1 col-3  menuTeste2">
+
+                                <button id="botaoMenu" #botaoMenu style="background-color:transparent; border:0" class="toggle-button">
+                                        <img src="./assets/Imagens/hamburger.png" alt="">
+                                </button>
+                        </div>
+                        <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor:pointer;">
+                                <!-- <div [hidden]="registoProducao">
+                                        <a (click)="RegistoProducao()">
+                                                <img width="" height="" src="../../assets/Imagens/registodeproducao.png" />
+                                                <span>Registo Produção</span>
+                                        </a>
+                                </div> -->
+                        </div>
+                        <div class="col-2 d-block d-lg-none" style="cursor:pointer;" align="center">
+                                <!-- <div [hidden]="registoProducao">
+                                        <a (click)="RegistoProducao()">
+                                                <img width="" height="" src="./assets/Imagens/registodeproducao.png" />
+                                        </a>
+                                </div> -->
+                        </div>
+
+                        <!--<div class="col-md-3 col-12  menuTeste" id="alignText" [hidden]="registoProducaoApa" style="border-bottom:3px solid #4AA8F5 !important">
+                            &nbsp;
+                        </div>-->
+
+
+                        <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor: pointer;">
+                                <!-- <a (click)="Comentario()">
+                                        <img width="" height="" src="./assets/Imagens/comentarios normal.png" />
+                                        <span>Comentários</span>
+                                </a> -->
+                        </div>
+                        <div class="col-2 d-block d-lg-none" id="alignText" style="cursor: pointer;" align="center">
+                                <!-- <a (click)="Comentario()">
+                                        <img width="" height="" src="./assets/Imagens/comentarios normal.png" />
+                                </a> -->
+                        </div>
+
+
+                        <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor:pointer;">
+                                <!-- <div [hidden]="linkAnexos">
+                                        <a (click)="Anexos()">
+                                                <img width="" height="" src="./assets/Imagens/anexos normal.png" />
+                                                <span>Anexos</span>
+                                        </a>
+                                </div> -->
+                        </div>
+                        <div class="col-2 d-block d-lg-none" id="alignText" style="cursor:pointer;" align="center">
+                                <!-- <div [hidden]="linkAnexos">
+                                        <a (click)="Anexos()">
+                                                <img width="" height="" src="./assets/Imagens/anexos normal.png" />
+                                        </a>
+                                </div> -->
+                        </div>
+                        <!--<div class="col-md-3 col-12  menuTeste" id="alignText" [hidden]="!linkAnexos" style="border-bottom:3px solid #4AA8F5 !important">
+                            &nbsp;
+                        </div>-->
+                        <div class="col-3 d-block d-lg-none">
+                                <div class="dropdown">
+                                        <a class="btn dropdown-toggle " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <div class="numberCircle" [ngStyle]="{'background-color': utilizador.cor }">{{utilizador.Utilizador[0]}}
+                                                </div>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="dropdownMenuButton">
+                                                <li>
+                                                        <a class="dropdown-item  UtilizadorHover" style="border-bottom:1px solid #4aa8f5">
+                                                                {{utilizador.Utilizador}}
+                                                        </a>
+                                                </li>
+                                                <li [hidden]="AcessoAdmin">
+                                                        <a class="dropdown-item MenuUtilizador" (click)="RegistoPendentes()">
+                                                                <img width="" height="" src="./assets/Imagens/registospendentes.png" />
+                                                                <span>Registo Utilizadores</span>
+                                                        </a>
+                                                </li>
+                                                <li>
+                                                        <a class="dropdown-item MenuUtilizador " (click)="LogOut()">
+                                                                <img width="" height="" src="./assets/Imagens/iconlogout.png" />
+
+                                                                <span>Log Out</span>
+                                                        </a>
+                                                </li>
+
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="col-md-2 d-none d-lg-block menuTeste2" id="alignText" style="float:right;cursor: pointer;">
+                                <div class="d-inline-block">
+                                        <a class="btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{utilizador.Utilizador}} </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="dropdownMenuButton">
+
+                                                <li [hidden]="AcessoAdmin">
+                                                        <a class="dropdown-item MenuUtilizador" (click)="RegistoPendentes()">
+                                                                <img width="" height="" src="./assets/Imagens/registospendentes.png" />
+                                                                <span>Registo Utilizadores</span>
+                                                        </a>
+                                                </li>
+                                                <li>
+                                                        <a class="dropdown-item MenuUtilizador " (click)="LogOut()">
+                                                                <img width="" height="" src="./assets/Imagens/iconlogout.png" />
+                                                                <span>Log Out</span>
+                                                        </a>
+                                                </li>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</header>
+<br/>
+<div class="container" style="height:100%; width:100%;padding-left: 30px;padding-right: 30px;">
+        <div class="row">
+                <div class=" col-lg-12 ">
+                        <label class="labelStyler">OF :
+                                <span style="color:#363636">{{txtOP}}</span>
+                        </label>
+                </div>
+                <!-- </div> -->
+                <!-- <div class="row"> -->
+                <div class="col-lg-12">
+                        <div class="chatbox" id="scroll">
+                                <ul class="chat-container" id="chatset" style="list-style-type:none;">
+                                </ul>
+                        </div>
+                </div>
+                <!-- </div> -->
+                <!-- <div class="row "> -->
+                <!-- <div class=" col-lg-12 ">
+                        <label class="labelStyler">Comentário </label>
+                </div> -->
+
+                <div class="col-lg-12">
+                        <dx-text-area placeholder="Escreva um comentário" [height]="50" [(ngModel)]="memoText">
+                        </dx-text-area>
+                </div>
+                <div class="col-lg-12">
+                        <dx-radio-group class="Posicao" [items]="priorities" [(value)]="priority" layout="horizontal" [disabled]="Ativo">
+                                <div *dxTemplate="let priority of 'item'">
+                                        <div style="font-size:12px;">{{priority.Text}}</div>
+                                </div>
+                        </dx-radio-group>
+                </div>
+        </div>
+        <div class="row">
+                <div class="col-lg-12" style="margin-bottom:15px;">
+                        <dx-button icon="./assets/Imagens/enviar.svg" class="todosBotoes Posicao " text="Enviar" (onClick)="EnviarComentario()"></dx-button>
+                </div>
+        </div>
+</div>

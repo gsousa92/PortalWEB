@@ -1,0 +1,257 @@
+<header>
+    <div class="menuTeste">
+        <div class="row" style="margin-left:0px; margin-right:0px">
+            <div class="col-lg-1 col-3  menuTeste2">
+
+                <button id="botaoMenu" #botaoMenu style="background-color:transparent; border:0" class="toggle-button">
+                    <img src="./assets/Imagens/hamburger.png" alt="">
+                </button>
+            </div>
+            <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor:pointer;">
+
+            </div>
+            <div class="col-2 d-block d-lg-none" style="cursor:pointer;" align="center">
+
+            </div>
+
+            <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor: pointer;">
+
+            </div>
+            <div class="col-2 d-block d-lg-none" id="alignText" style="cursor: pointer;" align="center">
+
+            </div>
+
+
+            <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor:pointer;">
+
+            </div>
+            <div class="col-2 d-block d-lg-none" id="alignText" style="cursor:pointer;" align="center">
+
+            </div>
+
+
+            <div class="col-3 d-block d-lg-none">
+                <div class="dropdown">
+                    <a class="btn dropdown-toggle " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="numberCircle" [ngStyle]="{'background-color': utilizador.cor }">{{utilizador.Utilizador[0]}}
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="dropdownMenuButton">
+                        <li>
+                            <a class="dropdown-item  UtilizadorHover" style="border-bottom:1px solid #4aa8f5">
+                                {{utilizador.Utilizador}}
+                            </a>
+                        </li>
+                        <li [hidden]="AcessoAdmin">
+                            <a class="dropdown-item MenuUtilizador" (click)="RegistoPendentes()">
+                                <img width="20" height="auto" src="./assets/Imagens/registospendentes.svg" />
+                                <span>Registo Utilizadores</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item MenuUtilizador " (click)="LogOut()">
+                                <img width="20" height="auto" src="./assets/Imagens/iconlogout.svg" />
+
+                                <span>Log Out</span>
+                            </a>
+                        </li>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 d-none d-lg-block menuTeste2" id="alignText" style="float:right;cursor: pointer;">
+                <div class="d-inline-block">
+                    <a class="btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{utilizador.Utilizador}} </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="dropdownMenuButton">
+
+                        <li [hidden]="AcessoAdmin">
+                            <a class="dropdown-item MenuUtilizador" (click)="RegistoPendentes()">
+                                <img width="20" height="auto" src="./assets/Imagens/registospendentes.svg" />
+                                <span>Registo de Utilizadores</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item MenuUtilizador " (click)="LogOut()">
+                                <img width="20" height="auto" src="./assets/Imagens/iconlogout.svg" />
+                                <span>Log Out</span>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="LinhaCinza" align="center" style="">
+    <div class="row">
+        <div class="col-lg-1 d-md-none d-lg-block">
+
+        </div>
+        <div class="col-lg-2 col-md-4 col-12">
+
+            <dx-select-box class="float-left" placeholder="Clientes" style="" width="190" [readOnly]="clientReadOnly" [dataSource]="DsClientes"
+                displayExpr="Nome" valueExpr="Codigo" [(ngModel)]="atualCliente" (onSelectionChanged)="ChangeCliente()">
+            </dx-select-box>
+
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-12">
+            <dx-select-box class="float-left" placeholder="Ano" [dataSource]="DsAnoArtigo" style="" displayExpr="ano" valueExpr="ano"
+                width="190" [(ngModel)]="ano" (onSelectionChanged)="changeImagemYear()">
+            </dx-select-box>
+        </div>
+
+        <div class="col-lg-3 d-md-none d-lg-block">
+
+        </div>
+        <div class="col-lg-3 col-md-4 col-12">
+            <!-- <div class="row"> -->
+            <div class="float-left" style="display:inline-block">
+
+                <!-- <div class="col-6"> -->
+                <!-- <dx-text-box class="float-left" style="" placeholder="Procurar..." style="width:190px;" (ngModel)="term"></dx-text-box> -->
+                <input type="text" style="width:190px;height: 34px;" placeholder="Procurar..." [(ngModel)]="term">
+
+                <!-- <div class="list-container">
+                            <dx-list 
+                                #list
+                                [dataSource]="DsArtigo"
+                                [height]="400"
+                               
+                                searchExpr="Name"
+                                searchMode="contains">
+                                    <div *dxTemplate="let data of 'item'">
+                                        <div>{{data}}</div>
+                                    </div>
+                            </dx-list>
+                        </div> -->
+                <!-- </div> -->
+                <!-- <div class="col-3"> -->
+                <!-- <dx-button  style="float:left" class=""   icon="./assets/Imagens/vista-grelha.svg" class="" >
+                        </dx-button> -->
+                <!-- </div> -->
+                <!-- <div class="col-3"> -->
+                <!-- <dx-button style="float:left" class=""   icon="./assets/Imagens/vista-lista.svg" class="" >
+                        </dx-button> -->
+                <!-- </div>    -->
+            </div>
+
+        </div>
+        <div class="col-lg-1 d-md-none d-lg-block">
+        </div>
+
+    </div>
+</div>
+<div class="row">
+    <!-- <div class="col-lg-1 d-md-none d-lg-block">
+        
+    </div> -->
+    <div class="col-lg-12 col-md-12 col-12" align="center">
+        <dx-tile-view #tileView height="100%" [baseItemHeight]="290" [baseItemWidth]="290" [itemMargin]="20" [direction]="'vertical'">
+
+            <dxi-item *ngFor="let artigo of DsArtigo | filter: term" (dblclick)="ShowInfo(artigo)">
+                <div [id]="artigo.codigo" class="imageTile" [style.background-image]="artigo.imagem"></div>
+                <div class=" row descricao">
+                    <div class="col-5">
+                        <!-- <div style="font-family: 'Montserrat', sans-serif;
+                    font-weight: 400; margin-top: 6px;"> Nome </div> -->
+
+                        <div style="font-family: 'Montserrat', sans-serif;
+                    font-weight: 600; margin-top: 6px;">{{ artigo.codigo }} </div>
+                    </div>
+                    <!-- <div class="col-1" style="margin-top: 6px;">
+                    <div>|</div>
+                    <div>|</div>
+                </div> -->
+                    <div class="col-5">
+                        <!-- <div style="font-family: 'Montserrat', sans-serif;
+                    font-weight: 400; margin-top: 6px;">Referência</div> -->
+                        <div style="font-family: 'Montserrat', sans-serif;
+                    font-weight: 600; margin-top: 6px;">{{ artigo.descricao }}</div>
+
+                    </div>
+                </div>
+
+            </dxi-item>
+
+
+
+        </dx-tile-view>
+    </div>
+</div>
+<dx-popup #popupDetalhes [showTitle]="true" [title]="TituloArtigo" (onHidden)="popHidden()" (onShown)="popShown()" [dragEnabled]="false"
+    [closeOnOutsideClick]="false" [(visible)]="popupVisible" showCloseButton="true" style="width:60%;max-width:800px">
+
+    <div *dxTemplate="let data of 'content'">
+        <div class="" style="height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;">
+            <div class="form">
+                <div class="row" style="background-color:#f7f7f7;margin-top:20px; ">
+                    <div class="col-lg-6">
+
+                        <div [style.background-image]="imagemArtigo" class="imageDetahes"></div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="row DetalhesArtigo"  >
+                            <div class="col-md-3">
+                                <label class="">Referência</label>
+                                <dx-text-box class="txtbox" [readOnly]="true" [value]="codigo"></dx-text-box>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="">Descrição</label>
+                                <dx-text-box class="txtbox" [readOnly]="true" [value]="descricao"></dx-text-box>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label class="">Nº de Cores</label>
+                                <dx-text-box class="txtbox" [readOnly]="true" [value]="cores"></dx-text-box>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="">Refer. Cliente</label>
+                                <dx-text-box class="txtbox" [readOnly]="true" [value]="VRef"></dx-text-box>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="">Data</label>
+                                <!-- <dx-text-box class="txtbox" [readOnly]="true" [value]="descricao"></dx-text-box> -->
+                                <dx-date-box class="txtbox " width="100%" [readOnly]="true" [value]="Data"></dx-date-box>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="">Tecnicas</label>
+                                <!-- <dx-text-box class="txtbox" [readOnly]="true" [value]="descricao"></dx-text-box> -->
+                                <dx-text-box class="txtbox " width="100%" [readOnly]="true" [value]="tecnica"></dx-text-box>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="">Marca</label>
+                                <!-- <dx-text-box class="txtbox" [readOnly]="true" [value]="descricao"></dx-text-box> -->
+                                <dx-text-box class="txtbox " width="100%" [readOnly]="true" [value]="marca"></dx-text-box>
+                            </div>
+                          
+                            <div class="col-md-3">
+                                <label class="">Altura</label>
+                                <!-- <dx-text-box class="txtbox" [readOnly]="true" [value]="descricao"></dx-text-box> -->
+                                <dx-text-box class="txtbox " width="100%" [readOnly]="true" [value]="altura"></dx-text-box>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="">Largura</label>
+                                <!-- <dx-text-box class="txtbox" [readOnly]="true" [value]="descricao"></dx-text-box> -->
+                                <dx-text-box class="txtbox " width="100%" [readOnly]="true" [value]="largura"></dx-text-box>
+                            </div>
+                           
+                            <div class="col-md-3">
+                                <label class="">Arrumção</label>
+                                <!-- <dx-text-box class="txtbox" [readOnly]="true" [value]="descricao"></dx-text-box> -->
+                                <dx-text-box class="txtbox " width="100%" [readOnly]="true" [value]="arrumacao"></dx-text-box>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</dx-popup>

@@ -1,0 +1,291 @@
+<header>
+        <div class="menuTeste">
+                <div class="row" style="margin-left:0px; margin-right:0px">
+                        <div class="col-lg-1 col-3  menuTeste2">
+
+                                <button id="botaoMenu" #botaoMenu style="background-color:transparent; border:0" class="toggle-button">
+                                        <img src="./assets/Imagens/hamburger.png" alt="">
+                                </button>
+                        </div>
+                        <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor:pointer;">
+                                <!-- <div [hidden]="registoProducao">
+                                        <a (click)="RegistoProducao()">
+                                                <img width="" height="" src="../../assets/Imagens/registodeproducao.png" />
+                                                <span>Registo Produção</span>
+                                        </a>
+                                </div> -->
+                        </div>
+                        <div class="col-2 d-block d-lg-none" style="cursor:pointer;" align="center">
+                                <!-- <div [hidden]="registoProducao">
+                                        <a (click)="RegistoProducao()">
+                                                <img width="" height="" src="./assets/Imagens/registodeproducao.png" />
+                                        </a>
+                                </div> -->
+                        </div>
+
+                        <!--<div class="col-md-3 col-12  menuTeste" id="alignText" [hidden]="registoProducaoApa" style="border-bottom:3px solid #4AA8F5 !important">
+                            &nbsp;
+                        </div>-->
+
+
+                        <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor: pointer;">
+                                <!-- <a (click)="Comentario()">
+                                        <img width="" height="" src="./assets/Imagens/comentarios normal.png" />
+                                        <span>Comentários</span>
+                                </a> -->
+                        </div>
+                        <div class="col-2 d-block d-lg-none" id="alignText" style="cursor: pointer;" align="center">
+                                <!-- <a (click)="Comentario()">
+                                        <img width="" height="" src="./assets/Imagens/comentarios normal.png" />
+                                </a> -->
+                        </div>
+
+
+                        <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor:pointer;">
+                                <!-- <div [hidden]="linkAnexos">
+                                        <a (click)="Anexos()">
+                                                <img width="" height="" src="./assets/Imagens/anexos normal.png" />
+                                                <span>Anexos</span>
+                                        </a>
+                                </div> -->
+                        </div>
+                        <div class="col-2 d-block d-lg-none" id="alignText" style="cursor:pointer;" align="center">
+                                <!-- <div [hidden]="linkAnexos">
+                                        <a (click)="Anexos()">
+                                                <img width="" height="" src="./assets/Imagens/anexos normal.png" />
+                                        </a>
+                                </div> -->
+                        </div>
+                        <!--<div class="col-md-3 col-12  menuTeste" id="alignText" [hidden]="!linkAnexos" style="border-bottom:3px solid #4AA8F5 !important">
+                            &nbsp;
+                        </div>-->
+
+                        <div class="col-3 d-block d-lg-none">
+                                <div class="dropdown">
+                                        <a class="btn dropdown-toggle " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <div class="numberCircle" [ngStyle]="{'background-color': utilizador.cor }">{{utilizador.Utilizador[0]}}
+                                                </div>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="dropdownMenuButton">
+                                                <li>
+                                                        <a class="dropdown-item  UtilizadorHover" style="border-bottom:1px solid #4aa8f5">
+                                                                {{utilizador.Utilizador}}
+                                                        </a>
+                                                </li>
+                                                <li [hidden]="AcessoAdmin">
+                                                        <a class="dropdown-item MenuUtilizador" (click)="RegistoPendentes()">
+                                                                <img width="20" height="auto" src="./assets/Imagens/registospendentes.svg" />
+                                                                <span>Registo Utilizadores</span>
+                                                        </a>
+                                                </li>
+                                                <li>
+                                                        <a class="dropdown-item MenuUtilizador " (click)="LogOut()">
+                                                                <img width="20" height="auto"src="./assets/Imagens/iconlogout.svg" />
+
+                                                                <span>Log Out</span>
+                                                        </a>
+                                                </li>
+
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="col-md-2 d-none d-lg-block menuTeste2" id="alignText" style="float:right;cursor: pointer;">
+                                <div class="d-inline-block">
+                                        <a class="btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{utilizador.Utilizador}} </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="dropdownMenuButton">
+
+                                                <li [hidden]="AcessoAdmin">
+                                                        <a class="dropdown-item MenuUtilizador" (click)="RegistoPendentes()">
+                                                                <img width="20" height="auto" src="./assets/Imagens/registospendentes.svg" />
+                                                                <span>Registo Utilizadores</span>
+                                                        </a>
+                                                </li>
+                                                <li>
+                                                        <a class="dropdown-item MenuUtilizador " (click)="LogOut()">
+                                                                <img width="20" height="auto" src="./assets/Imagens/iconlogout.svg" />
+                                                                <span>Log Out</span>
+                                                        </a>
+                                                </li>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</header>
+<br>
+
+
+<div class="LinhaCinza" align="center" style="">
+        <div class="row">
+                <div class="col-xl-12" align="left">
+                        <!-- <div style="display:inline-block">
+                                <label class="float-left TituloRegisto" style="color:#4AA8F5;margin-bottom: 0;margin-left:30px;line-height:36px">Registo Produçao of:</label>
+                        </div> -->
+                        <div style="display:inline-block">
+                                <dx-text-box class="float-left" placeholder="Registo Produçao of" style="margin-left:30px;" [(ngModel)]="fornecedorOF"></dx-text-box>
+                                <dx-button class="" style="float:left;margin-left:15px"  icon="./assets/Imagens/refresh.svg" class="botaoAtualizar" (click)="AtualizarRegisto()">
+                                </dx-button>
+
+                        </div>
+                        <!-- <dx-text-box [(ngModel)]="fornecedorOF"></dx-text-box>
+                        <dx-button icon="./assets/Imagens/refresh24.png" class="botaoAtualizar" (click)="AtualizarRegisto()">
+                        </dx-button> -->
+                </div>
+
+        </div>
+</div>
+
+<div id="grid">
+        <dx-data-grid #grid [dataSource]="dataSource" [selectedRowKeys]="[]" (onRowClick)="showInfo($event)" (onInitialized)="onInitializedEventHandler($event)"
+                [showColumnLines]="false" [showRowLines]="true" [showBorders]="false" [rowAlternationEnabled]="false"
+                 rowTemplate="formatarData" (onHidden)="popHidden()" (onShown)="popShown()"
+                [columnAutoWidth]="true">
+                <dxo-filter-row [visible]="true"></dxo-filter-row>
+                <dxo-search-panel [visible]="true" [width]="240" placeholder="Procurar..."></dxo-search-panel>
+                <dxo-header-filter [visible]="true"></dxo-header-filter>
+                <dxo-paging [pageSize]="15"></dxo-paging>
+                <dxo-selection mode="single"></dxo-selection>
+                <dxi-column dataField="OP"></dxi-column>
+                <dxi-column dataField="Data" dataType="date"></dxi-column>
+
+                <dxi-column dataField="Refer"></dxi-column>
+                <dxi-column dataField="Descricao" caption="Descrição"></dxi-column>
+                <dxi-column dataField="Seccao" caption="Secção"></dxi-column>
+                <dxi-column dataField="Cor"></dxi-column>
+                <dxi-column dataField="Tam" caption="Tamanho"></dxi-column>
+                <dxi-column dataField="NPessoas" caption="Nº Pessoas" dataType="text"></dxi-column>
+                <dxi-column dataField="Quant" dataType="text" dataType="text"></dxi-column>
+
+                <tbody *dxTemplate="let dataSource of 'formatarData'">
+                        <tr class="dx-row main-row">
+                                <td>{{dataSource.data.OP}}</td>
+                                <td>{{dataSource.data.Data | date: "dd/MM/yyyy"}}</td>
+                                <td>{{dataSource.data.Refer}}</td>
+                                <td>{{dataSource.data.Descricao}}</td>
+                                <td>{{dataSource.data.Seccao}}</td>
+                                <td>{{dataSource.data.Cor}}</td>
+                                <td>{{dataSource.data.Tam}}</td>
+                                <td>{{dataSource.data.NPessoas}}</td>
+                                <td>{{dataSource.data.Quant}}</td>
+
+                        </tr>
+                </tbody>
+                <dxo-summary>
+                        <dxi-total-item column="Quant" summaryType="sum">
+                        </dxi-total-item>
+                </dxo-summary>
+        </dx-data-grid>
+</div>
+<div class="col-sm-4" class="MargemMobile">
+        <dx-button icon="./assets/Imagens/novo.svg" class="todosBotoes" text="Nova Produção" (onClick)="RegistoProducao()"></dx-button>
+        <dx-button icon="./assets/Imagens/editar.svg" class="todosBotoes" text="Editar Produção " (onClick)="EditarProducao()"></dx-button>
+        <dx-button icon="./assets/Imagens/Voltar.svg" class="todosBotoes" text="Voltar" (onClick)="Voltar()">
+        </dx-button>
+</div>
+
+
+<dx-popup class="popup" #PopupRegisto [showTitle]="true" title="Registo Produçao " [dragEnabled]="false" [closeOnOutsideClick]="false"
+        showCloseButton="true" [(visible)]="popupVisible">
+        <div *dxTemplate="let data of 'content'">
+                <div style="height: 100%;
+                overflow-y: auto;
+                overflow-x: hidden;">
+                        <div class="form formTopo">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="col-md-12" style="padding-top:15px;padding-bottom: 15px;">
+                                                        <label class="labelFornecedor">Data:</label>
+                                                        <dx-date-box [(value)]="Data" type="date" class="txtbox" [readOnly]="Ativo" width="100%" (onInitialized)="onInitializedEventHandlerDate($event)">
+                                                                <dx-validator>
+                                                                        <dxi-validation-rule type="required" message="Data necessaria"></dxi-validation-rule>
+                                                                </dx-validator>
+                                                        </dx-date-box>
+                                                </div>
+
+                                                <div class="col-md-12" style="">
+                                                        <label class="labelFornecedor">Descrição:</label>
+
+                                                        <dx-text-box [readOnly]="true" [hoverStateEnabled]="false" [value]="txtdescricao" class="txtbox">
+                                                        </dx-text-box>
+                                                </div>
+                                                <div class="col-md-12" style="padding-top:15px;padding-bottom: 15px;">
+                                                        <label class="labelFornecedor">Secção:</label>
+
+                                                        <dx-select-box [dataSource]="seccao" [readOnly]="Ativo" displayExpr="nome" valueExpr="pc" [(ngModel)]="pc" class="txtbox"
+                                                                value="PC">
+                                                                <dx-validator>
+                                                                        <dxi-validation-rule type="required" message="Secção necessaria"></dxi-validation-rule>
+                                                                </dx-validator>
+                                                        </dx-select-box>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="col-md-12" style="padding-top:15px;padding-bottom: 15px;">
+
+                                                        <label class="labelFornecedor">Ordem Fabrico:</label>
+                                                        <dx-select-box [dataSource]="ordemFabrico" class="txtbox" [readOnly]="Ativo" displayExpr="EncOP" valueExpr="Enc" [(ngModel)]="fornecedorOF"
+                                                                (onSelectionChanged)="changeOF($event)">
+                                                                <dx-validator>
+                                                                        <dxi-validation-rule type="required" message="Ordem de fabrico necessaria"></dxi-validation-rule>
+                                                                </dx-validator>
+                                                        </dx-select-box>
+                                                </div>
+                                                <div class="col-md-12" style="">
+                                                        <label class="labelFornecedor">Cores:</label>
+
+                                                        <dx-select-box [dataSource]="cores" [(ngModel)]="cor" [readOnly]="Ativo" displayExpr="cor" valueExpr="cor" class="txtbox">
+                                                                <dx-validator>
+                                                                        <dxi-validation-rule type="required" message="Cor necessaria"></dxi-validation-rule>
+                                                                </dx-validator>
+                                                        </dx-select-box>
+                                                </div>
+                                                <div class="col-md-12" style="padding-top:15px;padding-bottom: 15px;">
+                                                        <label class="labelFornecedor">Nº Pessoas:</label>
+
+                                                        <dx-text-box [readOnly]="Ativo" [(ngModel)]="nPessoa" class="txtbox" value="nPessoa">
+                                                                <dx-validator>
+                                                                        <dxi-validation-rule type="required" message="Nº Pessoas necessaria"></dxi-validation-rule>
+                                                                </dx-validator>
+                                                        </dx-text-box>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="gridQuantidade">
+                                <dx-data-grid (onInitialized)="onInitializedEventHandler($event)" [dataSource]="gridQuantidades" [showColumnLines]="false"
+                                        [showRowLines]="true" [showBorders]="false" [rowAlternationEnabled]="false" (onEditorPreparing)="CelulaBlock($event)">
+                                        <dxo-editing mode="batch" [allowUpdating]="true">
+                                        </dxo-editing>
+
+                                </dx-data-grid>
+                        </div>
+
+
+                        <div class="row">
+                                <div clas="col-md-4" style="margin-bottom: 5%;">
+                                        <dx-button icon="./assets/Imagens/guardar.svg" class="todosBotoes hvazul" text="Guardar" (onClick)="Save()" [useSubmitBehavior]="true">
+                                        </dx-button>
+                                        <!-- <dx-button
+                            icon="./assets/Imagens/cancelar.ico"
+                            class="todosBotoes hvazul"
+                            text="Cancelar"
+                            (onClick)="Cancelar()" >
+                        </dx-button>   -->
+                                        <dx-button icon="./assets/Imagens/eliminar.svg" class="todosBotoes hvazul" text="Eliminar" [(visible)]="btnEliminar" (onClick)="Eliminar()">
+                                        </dx-button>
+
+                                </div>
+                                <div clas="col-md-4">
+
+                                </div>
+                                <div clas="col-md-4">
+
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+
+</dx-popup>

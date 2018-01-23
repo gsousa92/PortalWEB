@@ -1,0 +1,150 @@
+<div id="containerLogin" class="container">
+        <div class="row contentor">
+                <div class="col-lg-4 col-12 ladoEsquerdo" style="padding-right: 0px;padding-left: 0px;">
+                        <dx-scroll-view>
+                        <div class="footer2 d-none d-lg-block">Copyright © 2017 Inforcávado, informática, Lda. All Rights Reserved.</div>
+                        <div class="footer d-block d-lg-none">Copyright © 2017 Inforcávado, informática, Lda. All Rights Reserved.</div>  
+                        <div class="row logoPortal">
+                                <div class="col-1">&nbsp;</div> 
+                                <div class="col-10" align="center">
+                                        <img style="max-width:70%" src="./assets/Imagens/logoPortal.png">
+                                </div>   
+                                <div class="col-1">&nbsp;</div>    
+                        </div>
+                        <div class="row" style="">
+                                <div class="col-2">&nbsp;</div>
+                                <div class="col-8" align="center">
+                                        <dx-text-box class="textBoxLogin" [(ngModel)]="utilizadorText"
+                                        [value]="" placeholder="utilizador" ></dx-text-box>
+                                </div>
+                                <div class="col-2">&nbsp;</div> 
+                        </div>
+                        <div class="row" style="margin-top:20px">
+                                <div class="col-2">&nbsp;</div>
+                                <div class="col-8" align="center">
+                                        <dx-text-box  class="textBoxLogin" mode="password" [(ngModel)]="passwordText"
+                                        [value]="" placeholder="palavra-passe"></dx-text-box>      
+                                </div>
+                                <div class="col-2">&nbsp;</div> 
+                        </div>
+                        <div class="row ErrorText" style="margin-top:20px" [hidden]="erro">
+                                <div class="col-2">&nbsp;</div>
+                                <div class="col-8">
+                                        <img width="" height="" src="./assets/Imagens/password-user-erro.png" />  
+                                        <i class="glyphicon glyphicon-ban-circle" ></i><span style="margin-left:10px">Palavra-passe ou utilizador incorretos.  </span>
+                                </div>
+                                <div class="col-2">&nbsp;</div>
+                         </div>
+                         <div class="row" style="margin-top:50px">
+                                <div class="col-2">&nbsp;</div>
+                                <div class="col-8" align="center">
+                                   <div>
+                                        <dx-button
+                                        icon=""
+                                        class=" BotaoEntrar"
+                                        text="Entrar"
+                                        (onClick)="Entrar()"  >  </dx-button> 
+                                   </div>
+                                   <div class="col-2">&nbsp;</div>
+                                </div>
+                         </div>
+                         <div class="row" style="margin-top:10%">
+                                <div class="col-1">&nbsp;</div>
+                                <div class="col-10" align="center">
+                                        <a class="corTextPass" routerLink="/resetPassword">Esqueceu-se da palavra-passe?</a>
+                                </div>
+                                <div class="col-1">&nbsp;</div>
+                         </div>
+                         <div class="row" style="margin-top:2%;margin-bottom: 10%;">
+                                <div class="col-1">&nbsp;</div>
+                                <div class="col-10" align="center">
+                                        <a class="corTextRegisto" routerLink="/registoUtilizador">Registar</a>
+                                </div>
+                         </div>
+                        </dx-scroll-view>
+                </div>
+                <div class="col-lg-8   d-none d-lg-block FundoLogin ladoDireito" style="   background-image: url('./assets/Imagens/portal.jpg');" ></div>
+        </div>
+</div>
+
+
+
+
+
+
+<!-- <div class="FundoBranco">
+        <div class="form FormStyle" style="padding-left: 10%;
+        padding-right: 10%; ">
+                <div class="row" align="center">
+                    <div class="col-md-12 paddingLoginImagem ">
+                              <img src="./assets/Imagens/logoPortal.png" alt="">
+                              
+                    </div>
+                    <div class="col-md-12 paddingLogin" >
+                            <dx-text-box class="textBoxLogin" [(ngModel)]="utilizadorText"
+                            [value]="" placeholder="utilizador" ></dx-text-box> 
+                    </div>
+                    <div class="col-md-12 paddingLogin" align="center">
+                            <dx-text-box  
+                            class="textBoxLogin" mode="password" [(ngModel)]="passwordText"
+                            [value]="" placeholder="palavra-passe"></dx-text-box> 
+                    </div>
+                    <div class="col-md-12 ErrorText" align="center"  [hidden]="erro">
+                        
+                    
+                    </div>
+                    <div class="col-md-12 paddingLoginBotao" align="center">
+                            <dx-button
+                            icon=""
+                            class=" BotaoEntrar"
+                            text="Entrar"
+                            (onClick)="Entrar()"  >  </dx-button>
+                    </div>
+                    <div class="col-md-12 paddingTextLogin  " align="center">
+                        <a class="corTextPass" routerLink="">Esqueceu-se da palavra-passe?</a>
+                    </div>
+                    <div class="col-md-12 paddingTextLogin " align="center">
+                            <a class="corTextRegisto" routerLink="/registoUtilizador">Registar</a>
+                    </div>
+                    
+                </div>
+                <div class="Footer" align="center">
+                        <p>Copyright © 2017 Inforcávado, informática, Lda. All Rights Reserved.</p>
+                 
+                </div>
+                          
+        </div>
+     
+            
+</div> -->
+<!-- <div class="FundoLogin" style="background-image: url('./assets/Imagens/portal.jpg') ; ">
+</div> -->
+<dx-popup class="popupURl"
+[width]="500"
+[height]="200"
+
+
+[(visible)]="popupUrl">
+<div *dxTemplate="let data of 'content' " >
+        <div class="row">
+                <div class="col-md-12" align="center">
+                                <dx-text-box class="textBoxUrl" [(ngModel)]="urlText" 
+                                placeholder="Url Serviço" ></dx-text-box> 
+                </div>
+                <div class="col-md-12" align="center">
+                                <dx-button 
+                                icon=""
+                                class=" BotaoPopupEntrar"
+                                text="Entrar"
+                                (onClick)="EntrarUrl()"  >  </dx-button>
+                </div>
+        </div>
+                
+                
+</div>
+
+</dx-popup>
+
+
+
+

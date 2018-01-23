@@ -1,0 +1,39 @@
+<nav id="menu" class="navbar navbar-inverse" >
+    <h2><img src="./assets/Imagens/logoportalbranco.png" alt=""></h2>
+    <!-- <div class="menuItem" >
+        <a routerLink="/fornecedores">
+        <div class="menuItemPadding" align="center">
+          <img width="48px" height="auto" src="../assets/Imagens/modelos.ico"/><br/>
+          <span>Modelos</span>
+        </div>
+        </a>
+      </div> -->
+    <div class="menuItem" style="cursor:pointer;" [hidden]="getVisibleFornecedor()"  >
+      <!-- <a routerLink="/fornecedores"> -->
+      <a (click)="Fornecedores()">
+      <div class="menuItemPadding" align="center">
+        <img  width="48px" height="auto" src="./assets/Imagens/fornecedores.svg"/><br/>
+        <span>Fornecedores</span>
+      </div>
+      </a>
+    </div>
+    <div class="menuItem" style="cursor:pointer;" [hidden]="getVisibleCatalogo()"  >
+      <a (click)="Calalogo()">
+      <div class="menuItemPadding" align="center">
+        <img  width="48px" height="auto" src="./assets/Imagens/estampados.svg"/><br/>
+        <span>Catálogo</span>
+      </div>
+      </a>
+    </div>
+    <div class="menuItem" style="cursor:pointer;" [hidden]="getVisibleEntradas()" >
+      <a (click)="Entradas()">
+        <div class="menuItemPadding" align="center">
+          <img  width="48px" height="auto" src="./assets/Imagens/entradas-de-pecas.svg"/><br/>
+          <span>Entradas</span>
+        </div>
+        </a>
+    </div>
+  </nav>
+<main id="panel">
+    <router-outlet></router-outlet>
+</main>

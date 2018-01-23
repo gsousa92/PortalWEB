@@ -1,0 +1,178 @@
+
+.gridUsers{
+    box-shadow: 1px 1px 30px rgba(128, 128, 128, 0.38) !important;
+    border-radius: 15px;
+  
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+/deep/ .dropdownMenu 
+{
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 400;
+   font-size: 13px;
+   color:white !important;
+   background-color:rgba(54, 54, 54, 0.9);
+   border-radius: 0;
+   min-width: 200px;
+}
+/deep/  .dropdown-menu>li>a{
+    color:white !important;
+}
+
+/deep/ .dropdownMenu .MenuUtilizador:hover
+{
+    
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 600;
+   font-size: 13px;
+   color:white !important;
+   background-color:#4AA8F5;
+   border-radius: 0;
+   
+  
+}
+
+.UtilizadorHover {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color:white !important;
+    background-color:rgba(54, 54, 54, 0);
+}
+.menuTeste .row{
+    padding: 0px ;
+}
+
+/* /deep/ .gridUsers .dx-toolbar-items-container .dx-toolbar-item-content{
+    display: none;
+  } */
+ 
+
+/deep/ .gridUsers .dx-item.dx-toolbar-item.dx-toolbar-button.dx-toolbar-item-auto-hide.dx-toolbar-text-auto-hide{
+ display: none
+}
+
+.corTextPass{
+    color:#908f8f;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 12px;
+}
+
+.BotaoRegisto{
+    color:white;
+    background: #4AA8F5;
+    border: #4AA8F5;
+    width: 50%;   
+    border-radius: 50px;
+    height: 50px;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.SubTituloLabel{
+    font-family: 'Montserrat', sans-serif;
+    color:#4AA8F5;
+  
+    margin-bottom: 35px;
+    margin-top:40px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.SubTituloLabel1{
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+
+.TituloLabel{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color:#4AA8F5;
+    font-size:20px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.alianhamentoTitulo{
+    text-align: center;
+    
+}
+.alignCaixatexto {
+    margin-bottom: 16px !important;
+}
+
+.numberCircle {
+    border-radius:100%;
+   
+
+    /* width: 50px;
+    height:50px; */
+    padding: 5px 10px 5px 10px; 
+
+    background-color: #363636;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    
+    font: 20px 'Montserrat', sans-serif;
+}
+.btn {
+    padding: 0px; 
+  }
+
+  .row {
+ 
+    margin-right: 0px; 
+     margin-left: 0px;
+}
+
+@media screen and (max-width: 1200px) {
+    
+      .gridUsers
+      {
+          box-shadow: none !important;
+        
+          margin-right: 0px !important;
+          margin-left: 0px !important;
+          
+      }
+  }
+  @media screen and (max-width: 400px) {
+      
+         .MargemMobile{
+              margin-bottom: 5%;
+         }
+  
+         .gridUsers
+         {
+             box-shadow: none !important;
+             padding-bottom: 10px;
+             padding-left: 5px;
+             padding-right: 5px;
+             padding-top: 10px;
+             margin-right: 0px !important;
+             margin-left: 0px !important;
+             
+         }
+         /deep/.dx-datagrid {
+          line-height: 29px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          margin-left: 3px;
+          margin-right: 3px;
+        }
+  }

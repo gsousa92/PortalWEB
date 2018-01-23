@@ -1,0 +1,1 @@
+http://inforcavado.dyndns.org:81/servicoportalweb/Service1.svc/

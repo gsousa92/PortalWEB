@@ -1,0 +1,103 @@
+.numberCircle {
+    border-radius:100%;
+
+    padding: 5px 10px 5px 10px; 
+
+    background-color: #363636;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    
+    font: 20px 'Montserrat', sans-serif;
+}
+
+/deep/ .dropdownMenu 
+{
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 400;
+   font-size: 12px;
+   color:white !important;
+   background-color:rgba(54, 54, 54, 0.9);
+   border-radius: 0;
+   /* max-width: 200px; */
+}
+
+/deep/  .dropdown-menu>li>a{
+    color:white !important;
+}
+
+/deep/ .dropdownMenu .MenuUtilizador:hover
+{
+    
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 600;
+   font-size: 12px;
+   color:white !important;
+   background-color:#4AA8F5;
+   border-radius: 0;
+   
+  
+}
+
+.UtilizadorHover {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color:white !important;
+    background-color:rgba(54, 54, 54, 0);
+}
+
+.LinhaCinza{
+    background-color: #f7f7f7;
+    margin-bottom: 30px;
+    height: 10%;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-top: 30px;
+} 
+
+
+.row{
+margin-right: 0px;
+margin-left: 0px;
+}
+
+.imageTile {
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.imageDetahes{
+    height: 600px;
+    width: 100%;;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+}
+
+.DetalhesArtigo{
+    margin-top:200px;margin-bottom:100px;
+}
+
+@media screen and (max-width: 1200px) {
+    
+    .DetalhesArtigo{
+        margin-top:50px;margin-bottom:100px;
+    }
+}
+
+/deep/ .dx-tile-content .descricao {
+    font-size: 10px;
+    position: relative;
+    background-color: black;
+    color: white;
+    opacity: 0.6;
+   
+    bottom: 13%;
+    height: 36px;
+}

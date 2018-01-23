@@ -1,0 +1,547 @@
+html,
+body {
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.NomeModulo {
+  line-height: 50px;
+  vertical-align: middle;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0px 6px 30px 0px rgba(0, 0, 0, 0.05); /* PARA ADICIONAR SOMBRA*/
+  position: relative; /* PARA ADICIONAR SOMBRA*/
+}
+
+::ng-deep .dx-popup-wrapper .dx-state-focused.dx-overlay-content {
+  border: none;
+}
+
+.numberCircle {
+  border-radius: 100%;
+
+  padding: 5px 10px 5px 10px;
+
+  background-color: #363636;
+  border: none;
+  color: white;
+  text-align: center;
+  display: inline-block;
+
+  font: 20px "Montserrat", sans-serif;
+}
+
+.frameCombo {
+  background-color: #f7f7f7;
+  height: 61px;
+  width: 100%;
+}
+
+.ComboFornecedoresEntradas {
+  float: right;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  width: 66%;
+  height: 35px;
+}
+::ng-deep .popupConsultaEntradas .dx-popup-content {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 15%;
+}
+
+::ng-deep .popupConsultaEnvios .dx-popup-content {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 15%;
+}
+
+::ng-deep .popupRegistoEntradas .dx-popup-content {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 15%;
+  overflow-y: auto;
+}
+
+::ng-deep .popupAvisoExcessoEntradas .dx-popup-content {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 15%;
+}
+
+::ng-deep .ComboFornecedoresEntradas .dx-placeholder {
+  font-size: 14px;
+  color: #acacac;
+}
+
+::ng-deep .dx-datagrid-header-panel .dx-button {
+  border: none;
+  margin-left: 75px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #363636;
+}
+
+::ng-deep .dx-datagrid-header-panel .dx-button:hover {
+  text-decoration: underline;
+  background-color: white;
+}
+
+
+::ng-deep .dx-datagrid-header-panel .dx-button:active {
+  color: #4aa8f5;
+}
+
+::ng-deep .dx-datagrid-header-panel .dx-button.dx-state-focused {
+  background-color: white;
+}
+
+::ng-deep .dx-toolbar .dx-button .dx-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+}
+
+::ng-deep .dx-toolbar .dx-button.dx-state-hover {
+  text-decoration: underline;
+  background-color: white;
+}
+
+::ng-deep .dx-toolbar .dx-button.dx-state-hover .dx-button-text {
+  text-decoration: underline;
+}
+
+#gridEntradaPecas {
+  box-shadow: 1px 1px 30px rgba(128, 128, 128, 0.38) !important;
+  border-radius: 15px;
+  margin-top: 40px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+::ng-deep .gridRegistoEntradas .dx-datagrid-header-panel {
+  display: none;
+}
+
+.btnGridEntradas.dx-button.dx-state-hover {
+  border-radius: 100px;
+  border-style: solid;
+}
+
+.btnConsultarEntradas {
+  margin-top: 13px;
+  float: left;
+  margin-bottom: 5px;
+  min-width: 200px;
+}
+
+.btnConsultarEnvios {
+  margin-top: 13px;
+  margin-left: 25px;
+  float: left;
+  margin-bottom: 5px;
+  min-width: 200px;
+}
+
+.btnNovoRegisto {
+  margin-top: 13px;
+  margin-bottom: 5px;
+  min-width: 200px;
+}
+
+.dx-fieldset {
+  margin-top: 28px;
+  margin-bottom: 0px;
+  height: 40px;
+}
+
+.formRegistoEntrada {
+  height: 40px;
+  margin-top: 28px;
+  margin-bottom: 0px;
+}
+
+.dx-field .docEntrega {
+  float: left;
+  width: 100%;
+  margin-right: 10px;
+}
+
+.dx-field .dataEntrega dx-date-box {
+  width: 100% !important;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.dx-field .partida {
+  float: left;
+  width: 97%;
+  margin-left: 10px;
+  margin-right: 0%;
+  margin-bottom: 0px;
+}
+
+.todosBotoes.btnNovo {
+  float: right;
+  margin-left: 0px;
+  margin-top: 28px;
+  margin-bottom: 15%;
+}
+
+.tamanhoExcesso {
+  margin-top: 15px;
+  text-decoration: underline;
+  text-decoration-color: #4aa8f5;
+  text-underline-position: under;
+  right: 25px;
+}
+
+.avisoContent {
+  vertical-align: middle;
+  align-self: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.avisoExcesso {
+  margin-top: 25px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #acacac;
+}
+
+.menuTeste .row {
+  padding: 0px;
+}
+.arrayTamExcesso {
+  position: relative;
+  right: 20px;
+}
+.btnConfirmar {
+  border: 2px solid #4aa8f5;
+  background-color: #4aa8f5;
+  float: right;
+  margin-right: 0px;
+  margin-bottom: 25px;
+  margin-top: 47px;
+}
+
+.btnVoltarAtras {
+  border: 2px solid #4aa8f5;
+  float: left;
+  margin-left: 0px;
+  margin-bottom: 25px;
+  margin-top: 47px;
+}
+
+.btnConfirmar:hover {
+  background-color: #308cd7;
+  border: 2px solid #308cd7;
+}
+
+.btnVoltarAtras:hover {
+  background-color: #e6e6e6;
+  border: 2px solid #bebebe;
+}
+
+::ng-deep .dropdownMenu {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: white !important;
+  background-color: rgba(54, 54, 54, 0.9);
+  border-radius: 0;
+}
+
+::ng-deep .dropdown-menu > li > a {
+  color: white !important;
+}
+
+::ng-deep .dropdownMenu .MenuUtilizador:hover {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: white !important;
+  background-color: #4aa8f5;
+  border-radius: 0;
+}
+
+::ng-deep .SituacaoOrdem .dx-dropdowneditor-button {
+  width: 34px;
+
+  background-color: #4aa8f5;
+}
+
+::ng-deep
+  .SituacaoOrdem.dx-dropdowneditor.dx-dropdowneditor-active
+  .dx-dropdowneditor-icon,
+.dx-dropdowneditor-button.dx-state-active .dx-dropdowneditor-icon {
+  width: 34px;
+  background-color: #4aa8f5;
+}
+
+::ng-deep
+  .SituacaoOrdem.dx-dropdowneditor.dx-state-hover
+  .dx-dropdowneditor-icon,
+.dx-dropdowneditor-button.dx-state-hover .dx-dropdowneditor-icon {
+  width: 34px;
+  background-color: #4aa8f5;
+}
+
+::ng-deep .SituacaoOrdem.dx-dropdowneditor .dx-dropdowneditor-icon,
+.dx-dropdowneditor-button .dx-dropdowneditor-icon {
+  width: 34px;
+  background-color: #4aa8f5 !important;
+}
+
+::ng-deep .SituacaoOrdem.dx-dropdowneditor-active .dx-texteditor-input {
+  background: #4aa8f5;
+  color: white;
+}
+
+::ng-deep .SituacaoOrdem.dx-dropdowneditor-active .dx-placeholder {
+  color: white;
+}
+
+@media screen and (max-width: 1700px) {
+  .btnConsultas {
+    margin-left: 150px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .todosBotoes.btnNovo {
+    float: right;
+  }
+
+  .avisoContent {
+    top: 40%;
+    position: fixed;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .ComboFornecedoresEntradas {
+    width: 83%;
+    float: right;
+    margin-left: 5%;
+  }
+
+  #gridEntradaPecas {
+    box-shadow: none !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    margin-top: 0px;
+    display: unset;
+  }
+
+  .btnConsultas {
+    float: right;
+    margin-right: 5%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .dropdown, .dropup {
+    position: relative;
+    float: right;
+  }
+}
+
+@media screen and (max-height: 950px) {
+  .avisoContent {
+    top: 40%;
+    position: fixed;
+  }
+}
+
+@media screen and (max-width: 841px) {
+  .btnConsultarEntradas {
+    margin-top: 13px;
+    float: left;
+    margin-bottom: 30px;
+  }
+
+  .btnConsultarEnvios {
+    margin-top: 13px;
+    margin-left: 25px;
+    float: right;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 787px) {
+  ::ng-deep #gridEntradaPecas {
+    height: 60vh;
+    display: inline-table;
+    max-height: 600px;
+  }
+
+  ::ng-deep #gridEntradaPecas .dx-popup-content {
+    margin-bottom: 3px;
+    position: fixed;
+  }
+}
+
+@media screen and (max-width: 787px) {
+  .btnConsultas {
+    width: 100%;
+    float: right;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+  }
+
+  .btnNovoRegisto {
+    align-content: center;
+    margin-left: 33%;
+    margin-right: 33%;
+    width: 33%;
+    margin-bottom: 0px;
+  }
+
+  .btnConsultarEntradas {
+    width: 33%;
+    float: left;
+    margin-left: 33%;
+    margin-top: 13px;
+    margin-bottom: 0px;
+  }
+
+  .btnConsultarEnvios {
+    width: 33%;
+    float: left;
+    margin-left: 33%;
+    margin-top: 13px;
+  }
+
+  .dx-field .docEntrega {
+    margin-bottom: 13px;
+  }
+
+  .dx-field .dataEntrega dx-date-box {
+    margin-bottom: 13px;
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .dx-field .partida {
+    margin-bottom: 13px;
+    width: 100%;
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .btnConfirmar {
+    width: 33%;
+    margin-right: 34%;
+    margin-left: 33%;
+    margin-bottom: 13px;
+  }
+
+  .btnVoltarAtras {
+    width: 33%;
+    margin-right: 33%;
+    margin-left: 33%;
+    margin-top: 0px;
+  }
+
+  .ComboFornecedoresEntradas {
+    width: 50%;
+    float: left;
+    margin-left: 5%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .btnConsultas {
+    width: 100%;
+  }
+
+  .btnNovoRegisto {
+    width: 90%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 5%;
+    margin-right: 0;
+  }
+
+  .btnConsultarEntradas {
+    width: 90%;
+    margin-top: 13px;
+    margin-bottom: 0px;
+    margin-left: 5%;
+    margin-right: 0;
+  }
+
+  .btnConsultarEnvios {
+    width: 90%;
+    margin-top: 13px;
+    margin-bottom: 10%;
+    margin-left: 5%;
+    margin-right: 0;
+  }
+
+  .ComboFornecedoresEntradas {
+    width: 96%;
+    float: center;
+    margin-left: 2%;
+  }
+
+  #gridEntradaPecas {
+    box-shadow: none !important;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+  }
+
+  ::ng-deep #gridEntradaPecas .dx-datagrid {
+    line-height: 29px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+  .avisoExcesso {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  ::ng-deep .dx-toolbar .dx-toolbar-after {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+  ::ng-deep .dx-toolbar .dx-texteditor {
+    width: 100% !important;
+    width: 100%;
+    margin-left: 3px;
+  }
+}
+
+@media screen and (max-height: 399px) {
+  ::ng-deep #gridEntradaPecas .dx-popup-content {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  ::ng-deep .popupAvisoExcessoEntradas .dx-popup-content {
+    height: 100%;
+    overflow-y: auto;
+  }
+}

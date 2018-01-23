@@ -1,0 +1,1 @@
+import 'devextreme-intl';

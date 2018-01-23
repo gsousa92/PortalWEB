@@ -1,0 +1,331 @@
+<header>
+        <div class="menuTeste">
+                <div class="row" style="margin-left:0px; margin-right:0px">
+                        <div class="col-lg-1 col-3  menuTeste2">
+
+                                <button id="botaoMenu" #botaoMenu style="background-color:transparent; border:0" class="toggle-button">
+                                        <img src="./assets/Imagens/hamburger.png" alt="">
+                                </button>
+                        </div>
+                        <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor:pointer;">
+                                <!-- <div [hidden]="registoProducao">
+                                                <a (click)="RegistoProducao()">
+                                                        <img width="" height="" src="../../assets/Imagens/registodeproducao.png" />
+                                                        <span>Registo Produção</span>
+                                                </a>
+                                        </div> -->
+                        </div>
+                        <div class="col-2 d-block d-lg-none" style="cursor:pointer;" align="center">
+                                <!-- <div [hidden]="registoProducao">
+                                                <a (click)="RegistoProducao()">
+                                                        <img width="" height="" src="./assets/Imagens/registodeproducao.png" />
+                                                </a>
+                                        </div> -->
+                        </div>
+
+                        <!--<div class="col-md-3 col-12  menuTeste" id="alignText" [hidden]="registoProducaoApa" style="border-bottom:3px solid #4AA8F5 !important">
+                                    &nbsp;
+                                </div>-->
+
+
+                        <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor: pointer;">
+                                <!-- <a (click)="Comentario()">
+                                                <img width="" height="" src="./assets/Imagens/comentarios normal.png" />
+                                                <span>Comentários</span>
+                                        </a> -->
+                        </div>
+                        <div class="col-2 d-block d-lg-none" id="alignText" style="cursor: pointer;" align="center">
+                                <!-- <a (click)="Comentario()">
+                                                <img width="" height="" src="./assets/Imagens/comentarios normal.png" />
+                                        </a> -->
+                        </div>
+
+
+                        <div class="col-md-3 d-none d-lg-block menuTeste" id="alignText" style="cursor:pointer;">
+                                <!-- <div [hidden]="linkAnexos">
+                                                <a (click)="Anexos()">
+                                                        <img width="" height="" src="./assets/Imagens/anexos normal.png" />
+                                                        <span>Anexos</span>
+                                                </a>
+                                        </div> -->
+                        </div>
+                        <div class="col-2 d-block d-lg-none" id="alignText" style="cursor:pointer;" align="center">
+                                <!-- <div [hidden]="linkAnexos">
+                                                <a (click)="Anexos()">
+                                                        <img width="" height="" src="./assets/Imagens/anexos normal.png" />
+                                                </a>
+                                        </div> -->
+                        </div>
+                        <!--<div class="col-md-3 col-12  menuTeste" id="alignText" [hidden]="!linkAnexos" style="border-bottom:3px solid #4AA8F5 !important">
+                                    &nbsp;
+                                </div>-->
+
+                        <div class="col-3 d-block d-lg-none">
+                                <div class="dropdown">
+                                        <a class="btn dropdown-toggle " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <div class="numberCircle" [ngStyle]="{'background-color': utilizador.cor }">{{utilizador.Utilizador[0]}}
+                                                </div>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="dropdownMenuButton">
+                                                <li>
+                                                        <a class="dropdown-item  UtilizadorHover" style="border-bottom:1px solid #4aa8f5">
+                                                                {{utilizador.Utilizador}}
+                                                        </a>
+                                                </li>
+                                                <li [hidden]="">
+                                                        <a class="dropdown-item MenuUtilizador">
+                                                                <img width="20" height="auto" src="./assets/Imagens/registospendentes.svg" />
+                                                                <span>Registo Utilizadores</span>
+                                                        </a>
+                                                </li>
+                                                <li>
+                                                        <a class="dropdown-item MenuUtilizador " (click)="LogOut()">
+                                                                <img width="20" height="auto" src="./assets/Imagens/iconlogout.svg" />
+
+                                                                <span>Log Out</span>
+                                                        </a>
+                                                </li>
+
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="col-md-2 d-none d-lg-block menuTeste2" id="alignText" style="float:right;cursor: pointer;">
+                                <div class="d-inline-block">
+                                        <a class="btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{utilizador.Utilizador}} </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdownMenu" aria-labelledby="dropdownMenuButton">
+
+                                                <li [hidden]="">
+                                                        <a class="dropdown-item MenuUtilizador">
+                                                                <img width="20" height="auto" src="./assets/Imagens/registospendentes.svg" />
+                                                                <span>Registo de Utilizadores</span>
+                                                        </a>
+                                                </li>
+                                                <li>
+                                                        <a class="dropdown-item MenuUtilizador " (click)="LogOut()">
+                                                                <img width="20" height="auto" src="./assets/Imagens/iconlogout.svg" />
+                                                                <span>Log Out</span>
+                                                        </a>
+                                                </li>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</header>
+
+<h1 class="TituloLabel">Registos Pendentes</h1>
+
+<div id="grid">
+        <dx-data-grid #grid [dataSource]="datasourcePendentes" (onRowClick)="SelectRow($event)" [allowColumnResizing]="true" [showColumnLines]="false"
+                [showRowLines]="true" [showBorders]="false" [columnAutoWidth]="true">
+
+                <dxo-selection mode="single"></dxo-selection>
+                <dxo-paging [pageSize]="3"></dxo-paging>
+
+
+                <dxi-column caption="Nome" dataField="Nome"></dxi-column>
+                <dxi-column caption="Apelido" dataField="Apelido"></dxi-column>
+                <dxi-column caption="Utilizador" dataField="Utilizador"></dxi-column>
+                <dxi-column caption="Grupo" dataField="Grupo"></dxi-column>
+                <dxi-column caption="Email" dataField="Email"></dxi-column>
+                <dxi-column caption="Empresa" dataField="Empresa"></dxi-column>
+                <dxi-column caption="Observações" dataField="Obs"></dxi-column>
+                <dxi-column caption="Estado" dataField="Estado"></dxi-column>
+
+        </dx-data-grid>
+</div>
+
+<!-- <div class="row" style="padding-right:6%;padding-left:6%;">
+  <div class="col-md-6 alianhamentoTitulo ">
+    <label class="SubTituloLabel">Dados de Registo</label>
+    <div class="row" >
+       
+        <div class="col-md-6 SubTituloLabel1" >
+            <label class="" style="padding-left: 6%;">Dados do Utilizador</label>
+            <div class="col-md-12 alignCaixatexto">
+                    <dx-text-box class="" [(ngModel)]="PrimeiroNomeText"
+                    placeholder="Primerio Nome"></dx-text-box>
+            </div>
+            <div class="col-md-12 alignCaixatexto">
+                    <dx-text-box  [(ngModel)]="UltimoNomeNomeText"
+                    placeholder="Último Nome"></dx-text-box> 
+            </div>
+             <div class="col-md-12 alignCaixatexto">
+                    <dx-text-box  [(ngModel)]="UtilizadorText"
+                    placeholder="Utilizador"></dx-text-box>    
+            </div>
+            <div class="col-md-12 alignCaixatexto">
+                    <dx-select-box [dataSource]="DsGrupos" displayExpr="Nome" valueExpr="GrupoID"  [(ngModel)]="GrupoID"
+                    placeholder="Grupo de Utilizador"></dx-select-box>    
+            </div> 
+        </div>
+        <div class="col-md-6 SubTituloLabel1"  >
+                <label class="" style="padding-left: 6%;" >Dados da Entidade</label>
+                <div class="col-md-12 alignCaixatexto ">
+                        <dx-text-box  [(ngModel)]="emailText"
+                        placeholder="Email"></dx-text-box>
+                </div>
+                <div class="col-md-12 alignCaixatexto">
+                                <dx-text-box  [(ngModel)]="NomeEmpresaText"
+                                placeholder="Nome Empresa"></dx-text-box>    
+                        </div>
+                <div class="col-md-12 alignCaixatexto">
+                        <dx-text-area  [(ngModel)]="obsText" [height]="90"
+                        placeholder="Observações"></dx-text-area> 
+                </div>
+            </div>
+    </div>
+  </div>
+  <div class="col-md-6 alianhamentoTitulo " align="center">
+    <label class="SubTituloLabel">Registo de Credenciais</label>
+        <div class="row">
+            <div class="col-md-6 SubTituloLabel1">
+                    <label class="">&nbsp;</label>
+                    <div class="col-md-12 alignCaixatexto">
+                            <dx-select-box #Utilizador [dataSource]="DsUserPROTextil" displayExpr="NomeUtiProtextil" valueExpr="id"  [(ngModel)]="id"
+                            placeholder="Utilizador PROTextil" (onSelectionChanged)="SelectCombox($event)" ></dx-select-box>    
+                    </div> 
+                    <div class="col-md-12 alignCaixatexto">
+                            <dx-select-box #Centros [dataSource]="DsCentros" displayExpr="Descricao" valueExpr="Cod"  [(ngModel)]="Cod"
+                            placeholder="Centro de Vendas" (onSelectionChanged)="SelectCombox($event)" ></dx-select-box>    
+                    </div> 
+                    <div class="col-md-12 alignCaixatexto">
+                            <dx-select-box #Terceiros [dataSource]="DsTerceiros" displayExpr="NomeTerceiro" valueExpr="Codigo"  [(ngModel)]="Codigo"
+                            placeholder="Terceiro"  (onSelectionChanged)="SelectCombox($event)"></dx-select-box>    
+                    </div> 
+                    <div class="col-md-12 alignCaixatexto">
+                            <dx-select-box [dataSource]="DsEstado" displayExpr="EstadoText" valueExpr="EstadoValue"  [(ngModel)]="EstadoValue"
+                            placeholder="Estado"></dx-select-box>    
+                    </div>
+            </div>
+            <div class="col-md-6 SubTituloLabel1">
+                    <label class="">&nbsp;</label>
+                    <div class="col-md-12 alignCaixatexto">
+                            <dx-select-box [dataSource]="DsContacto" displayExpr="Nome" valueExpr="Terc"  [(ngModel)]="Terc"
+                            placeholder="Contacto"></dx-select-box>    
+                    </div> 
+                    <div align="center" style="margin-top:55px;">
+                        <re-captcha (resolved)="resolved($event)" siteKey="6Lej0DgUAAAAAA-gkmwxjsoE5Biq9gTwZQlGd8Jk"></re-captcha>`
+                    </div>
+                   
+                   
+            </div>
+        </div>
+  </div>
+</div> -->
+<div class="row" style="padding-right:6%;padding-left:6%;">
+        <div class="col-lg-6 alianhamentoTitulo ">
+                <!-- <label class="SubTituloLabel">Dados de Registo</label> -->
+                <div class="row">
+
+                        <div class="col-md-6 SubTituloLabel1">
+                                <label class="" style="padding-left: 6%;">Dados do Utilizador</label>
+                                <div class="col-md-12 alignCaixatexto">
+                                        <dx-text-box class="" [(ngModel)]="PrimeiroNomeText" placeholder="Primerio Nome"></dx-text-box>
+                                </div>
+                                <div class="col-md-12 alignCaixatexto">
+                                        <dx-text-box [(ngModel)]="UltimoNomeNomeText" placeholder="Último Nome"></dx-text-box>
+                                </div>
+                                <div class="col-md-12 alignCaixatexto">
+                                        <dx-text-box [(ngModel)]="UtilizadorText" placeholder="Utilizador"></dx-text-box>
+                                </div>
+                                <div class="col-md-12 alignCaixatexto">
+                                        <dx-select-box [dataSource]="DsGrupos" displayExpr="Nome" valueExpr="GrupoID" [(ngModel)]="GrupoID" placeholder="Grupo de Utilizador"></dx-select-box>
+                                </div>
+                        </div>
+                        <div class="col-md-6 SubTituloLabel1">
+                                <label class="" style="padding-left: 6%;">Dados da Entidade</label>
+                                <div class="col-md-12 alignCaixatexto ">
+                                        <dx-text-box [(ngModel)]="emailText" placeholder="Email"></dx-text-box>
+                                </div>
+                                <div class="col-md-12 alignCaixatexto">
+                                        <dx-text-box [(ngModel)]="NomeEmpresaText" placeholder="Nome Empresa"></dx-text-box>
+                                </div>
+                                <div class="col-md-12 alignCaixatexto">
+                                        <dx-text-area [(ngModel)]="obsText" [height]="90" placeholder="Observações"></dx-text-area>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div class="col-lg-6 alianhamentoTitulo " align="center">
+                <!-- <label class="SubTituloLabel1">Registo de Credenciais</label> -->
+                <div class="row">
+                        <div class="col-md-6 SubTituloLabel1">
+                                <label class="" style="padding-left: 6%;">Registo de Credenciais</label>
+                                <div class="col-md-12 alignCaixatexto">
+                                        <dx-select-box #usersPop [dataSource]="DsUserPROTextil" displayExpr="NomeUtiProtextil" valueExpr="id" [(ngModel)]="id" placeholder="Utilizador PROTextil"
+                                                (onValueChanged)="SelectCombox($event, usersPop, terceirosPop, vendedoresPop, 'user')"></dx-select-box>
+                                </div>
+                                <div class="col-md-12 alignCaixatexto">
+                                        <dx-select-box #vendedoresPop [dataSource]="DsCentros" displayExpr="Descricao" valueExpr="Cod" [(ngModel)]="Cod" placeholder="Centro de Vendas"
+                                                (onValueChanged)="SelectCombox($event, usersPop, terceirosPop, vendedoresPop, 'vendedor')"></dx-select-box>
+                                </div>
+                                <div class="col-md-12 alignCaixatexto">
+                                        <dx-select-box #terceirosPop [dataSource]="DsTerceiros" displayExpr="NomeTerceiro" valueExpr="Codigo" [(ngModel)]="Codigo"
+                                                placeholder="Terceiro" (onValueChanged)="SelectCombox($event, usersPop, terceirosPop, vendedoresPop, 'terceiro')"></dx-select-box>
+                                </div>
+                                <div class="col-md-12 ">
+                                        <dx-select-box [dataSource]="DsEstado" displayExpr="EstadoText" valueExpr="EstadoValue" [(ngModel)]="EstadoValue" placeholder="Estado"></dx-select-box>
+                                </div>
+                        </div>
+                        <div class="col-md-6 SubTituloLabel1">
+                                <label class="">&nbsp;</label>
+                                <div class="col-md-12 alignCaixatexto">
+                                        <dx-select-box [dataSource]="DsContacto" displayExpr="Nome" valueExpr="Terc" [(ngModel)]="Terc" placeholder="Contacto"></dx-select-box>
+                                </div>
+                                <!-- <div align="center" style="margin-top:55px;">
+                              <re-captcha (resolved)="resolved($event)" siteKey="6Lej0DgUAAAAAA-gkmwxjsoE5Biq9gTwZQlGd8Jk"></re-captcha>`
+                          </div> -->
+
+
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="" align="center">
+        <div align="center" style="margin-top:0px;">
+                <re-captcha (resolved)="resolved($event)" siteKey="6Lej0DgUAAAAAA-gkmwxjsoE5Biq9gTwZQlGd8Jk"></re-captcha>
+        </div>
+        <div class="col-md-4">
+                <dx-button icon="" class="BotaoRegisto" text="Registar" (onClick)="InserirUserPortal()"> </dx-button>
+
+        </div>
+        <div class="row">
+                <!-- <div class="col-md-12 Pedidos"  [hidden]="messagemErro">
+                        
+                        <img width="" height="" src="../../assets/Imagens/naoaceite.png" />  
+                        <label for="">Falhou registo</label>
+                </div>
+                <div class="col-md-12 Pedidos"  [hidden]="messagemUtilizador">
+                        <img width="" height="" src="../../assets/Imagens/naoaceite.png" />  
+                        <label for=""> O Utilizador que está a tentar registar já existe. Por favor registe um Utilizador diferente.</label>
+                 </div>
+                 <div class="col-md-12 Pedidos"  [hidden]="messagemEmail">
+                        <img width="" height="" src="../../assets/Imagens/naoaceite.png" />  
+                        <label for=""> O email fornecido já está a ser utilizado por outro registo. Por favor registe um email diferente.</label>
+                </div> -->
+                <!-- <div class="col-md-12 Pedidos"  [hidden]="messagemAceite">
+                        <img width="" height="" src="../../assets/Imagens/aceite.png" /> 
+                        <label for="">Registo efetuado com sucesso. Foi enviado um email para o requerente para finalizar o pedido de registo.</label>
+                 </div> -->
+        </div>
+
+        <div class="col-md-3" class="MargemMobile" style="">
+                <a class="corTextPass" routerLink="/listarUtilizador">Lista de Utilizadores do Portal Web</a>
+        </div>
+        <!-- <div *ngIf="resultado==-1">
+        <label>Utilizador ja existente</label>
+    </div>
+    <div *ngIf="resultado==-2">
+            <label>Email ja existente</label>
+    </div>
+    <div *ngIf="resultado==erro ">
+                <label>Não consiguiu criar utilizador </label>
+        </div> 
+    <div *ngIf='resultado== " " '>
+            <label>Utilizador criado com sucesso</label>
+    </div> -->
+
+
+</div>
